@@ -1,62 +1,8 @@
 [
   {
-    "name": "panelPosition",
-    "type": "PanelLayoutProps.PanelPosition",
-    "description": "Position of the panel with respect to the main content",
-    "required": false
-  },
-  {
     "name": "defaultPanelSize",
     "type": "number",
     "description": "Initial panel size, for uncontrolled behavior.\n\nThe actual size will be constrained by `minPanelSize` and `maxPanelSize`, if set.",
-    "required": false
-  },
-  {
-    "name": "panelSize",
-    "type": "number",
-    "description": "Size of the panel. If provided, and panel is resizable, the component is controlled,\nso you must also provide `onPanelResize`.\n\nThe actual size will be constrained by `minPanelSize` and `maxPanelSize`, if set.",
-    "required": false
-  },
-  {
-    "name": "minPanelSize",
-    "type": "number",
-    "description": "The minimum size of the panel.",
-    "required": false
-  },
-  {
-    "name": "maxPanelSize",
-    "type": "number",
-    "description": "The maximum size of the panel.",
-    "required": false
-  },
-  {
-    "name": "resizable",
-    "type": "boolean",
-    "description": "Indicates whether the panel is resizable.",
-    "required": false
-  },
-  {
-    "name": "panelContent",
-    "type": "unknown",
-    "description": "Panel contents.",
-    "required": true
-  },
-  {
-    "name": "mainContent",
-    "type": "unknown",
-    "description": "Main content area displayed next to the panel.",
-    "required": true
-  },
-  {
-    "name": "panelFocusable",
-    "type": "PanelLayoutProps.FocusableConfig",
-    "description": "Makes the panel content focusable. This should be used if there are no focusable elements\ninside the panel, to ensure it is keyboard scrollable.\n\nProvide either `{ariaLabel: \"Panel label\"}` or `{ariaLabelledby: \"panel-label-id\"}`",
-    "required": false
-  },
-  {
-    "name": "mainFocusable",
-    "type": "PanelLayoutProps.FocusableConfig",
-    "description": "Makes the main content area focusable. This should be used if there are no focusable elements\ninside the content, to ensure it is keyboard scrollable.\n\nProvide either `{ariaLabel: \"Main label\"}` or `{ariaLabelledby: \"main-label-id\"}`",
     "required": false
   },
   {
@@ -69,6 +15,60 @@
     "name": "i18nStrings",
     "type": "PanelLayoutProps.I18nStrings",
     "description": "An object containing all the necessary localized strings required by the component.",
+    "required": false
+  },
+  {
+    "name": "mainContent",
+    "type": "unknown",
+    "description": "Main content area displayed next to the panel.",
+    "required": true
+  },
+  {
+    "name": "mainFocusable",
+    "type": "PanelLayoutProps.FocusableConfig",
+    "description": "Makes the main content area focusable. This should be used if there are no focusable elements\ninside the content, to ensure it is keyboard scrollable.\n\nProvide either `{ariaLabel: \"Main label\"}` or `{ariaLabelledby: \"main-label-id\"}`",
+    "required": false
+  },
+  {
+    "name": "maxPanelSize",
+    "type": "number",
+    "description": "The maximum size of the panel.",
+    "required": false
+  },
+  {
+    "name": "minPanelSize",
+    "type": "number",
+    "description": "The minimum size of the panel.",
+    "required": false
+  },
+  {
+    "name": "panelContent",
+    "type": "unknown",
+    "description": "Panel contents.",
+    "required": true
+  },
+  {
+    "name": "panelFocusable",
+    "type": "PanelLayoutProps.FocusableConfig",
+    "description": "Makes the panel content focusable. This should be used if there are no focusable elements\ninside the panel, to ensure it is keyboard scrollable.\n\nProvide either `{ariaLabel: \"Panel label\"}` or `{ariaLabelledby: \"panel-label-id\"}`",
+    "required": false
+  },
+  {
+    "name": "panelPosition",
+    "type": "PanelLayoutProps.PanelPosition",
+    "description": "Position of the panel with respect to the main content",
+    "required": false
+  },
+  {
+    "name": "panelSize",
+    "type": "number",
+    "description": "Size of the panel. If provided, and panel is resizable, the component is controlled,\nso you must also provide `onPanelResize`.\n\nThe actual size will be constrained by `minPanelSize` and `maxPanelSize`, if set.",
+    "required": false
+  },
+  {
+    "name": "resizable",
+    "type": "boolean",
+    "description": "Indicates whether the panel is resizable.",
     "required": false
   }
 ]

@@ -1,5 +1,18 @@
 [
   {
+    "name": "alt",
+    "type": "string",
+    "description": "Specifies alternate text for a custom icon (using the `url` attribute).\nThis property is ignored if you use a predefined icon or if you set your custom icon using the `svg` slot.",
+    "required": false
+  },
+  {
+    "name": "ariaLabel",
+    "type": "string",
+    "description": "Specifies alternate text for the icon. We recommend that you provide this for accessibility.",
+    "required": false,
+    "defaultValue": "null"
+  },
+  {
     "name": "name",
     "type": "IconProps.Name",
     "description": "Specifies the icon to be displayed.",
@@ -13,29 +26,16 @@
     "defaultValue": "'normal'"
   },
   {
-    "name": "variant",
-    "type": "IconProps.Variant",
-    "description": "Specifies the color variant of the icon. The `normal` variant picks up the current color of its context.",
-    "required": false,
-    "defaultValue": "'normal'"
-  },
-  {
     "name": "url",
     "type": "string",
     "description": "Specifies the URL of a custom icon. Use this property if the icon you want isn't available, and your custom icon cannot be an SVG.\nFor SVG icons, use the `svg` slot instead.\n\nIf you set both `url` and `svg`, `svg` will take precedence.",
     "required": false
   },
   {
-    "name": "alt",
-    "type": "string",
-    "description": "Specifies alternate text for a custom icon (using the `url` attribute).\nThis property is ignored if you use a predefined icon or if you set your custom icon using the `svg` slot.",
-    "required": false
-  },
-  {
-    "name": "ariaLabel",
-    "type": "string",
-    "description": "Specifies alternate text for the icon. We recommend that you provide this for accessibility.",
+    "name": "variant",
+    "type": "IconProps.Variant",
+    "description": "Specifies the color variant of the icon. The `normal` variant picks up the current color of its context.",
     "required": false,
-    "defaultValue": "null"
+    "defaultValue": "'normal'"
   }
 ]

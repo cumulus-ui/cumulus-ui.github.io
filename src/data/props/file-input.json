@@ -1,8 +1,8 @@
 [
   {
-    "name": "variant",
-    "type": "'button' | 'icon'",
-    "description": "Variant of the file input. Defaults to \"button\".",
+    "name": "accept",
+    "type": "string",
+    "description": "Specifies the native file input `accept` attribute to describe the allow-list of file types.",
     "required": false
   },
   {
@@ -12,21 +12,15 @@
     "required": false
   },
   {
-    "name": "children",
-    "type": "string",
-    "description": "Text displayed in the file input component. Used as the aria label if ariaLabel is not defined.",
-    "required": false
-  },
-  {
-    "name": "accept",
-    "type": "string",
-    "description": "Specifies the native file input `accept` attribute to describe the allow-list of file types.",
-    "required": false
-  },
-  {
     "name": "ariaRequired",
     "type": "boolean",
     "description": "Specifies whether to add aria-required to the file upload control.",
+    "required": false
+  },
+  {
+    "name": "children",
+    "type": "string",
+    "description": "Text displayed in the file input component. Used as the aria label if ariaLabel is not defined.",
     "required": false
   },
   {
@@ -40,5 +34,11 @@
     "type": "ReadonlyArray<File>",
     "description": "Specifies the currently selected file(s).\nIf you want to clear the selection, use empty array.",
     "required": true
+  },
+  {
+    "name": "variant",
+    "type": "'button' | 'icon'",
+    "description": "Variant of the file input. Defaults to \"button\".",
+    "required": false
   }
 ]

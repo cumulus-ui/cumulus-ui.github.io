@@ -1,17 +1,5 @@
 [
   {
-    "name": "columns",
-    "type": "number",
-    "description": "Specifies the number of columns in each grid row.\nValid values are any integer between 1 and 4. It defaults to 1.",
-    "required": false
-  },
-  {
-    "name": "items",
-    "type": "ReadonlyArray<KeyValuePairsProps.Item>",
-    "description": "An array of either key-value pairs individual items or groups.\nThey could be combined.\nEach item has `type` prop, which might be either `group` or `pair`. Defaults to `pair` if not specified.\n\nEach key-value pair definition has the following properties:\n  * `type` (string) - (Optional) Item type (pair).\n  * `label` (unknown) - The key label.\n  * `info` (unknown) - (Optional) Area next to the key to display an info link.\n  * `value` (unknown) - The corresponding value for the key.\n\nEach group definition has the following properties:\n  * `type` (string) - Item type (group).\n  * `title` (string) - (Optional) An optional title for this column.\n  * `items` (ReadonlyArray<KeyValuePairProps.KeyValuePair>) - An array of\n    key-value pair items.",
-    "required": true
-  },
-  {
     "name": "ariaLabel",
     "type": "string",
     "description": "Provides an `aria-label` to the Key-value pairs container.\nDon't use `ariaLabel` and `ariaLabelledby` at the same time.",
@@ -22,6 +10,18 @@
     "type": "string",
     "description": "Sets the `aria-labelledby` property on the Key-value pairs container.\nIf there's a visible label element that you can reference, use this instead of `ariaLabel`.\nDon't use `ariaLabel` and `ariaLabelledby` at the same time.",
     "required": false
+  },
+  {
+    "name": "columns",
+    "type": "number",
+    "description": "Specifies the number of columns in each grid row.\nValid values are any integer between 1 and 4. It defaults to 1.",
+    "required": false
+  },
+  {
+    "name": "items",
+    "type": "ReadonlyArray<KeyValuePairsProps.Item>",
+    "description": "An array of either key-value pairs individual items or groups.\nThey could be combined.\nEach item has `type` prop, which might be either `group` or `pair`. Defaults to `pair` if not specified.\n\nEach key-value pair definition has the following properties:\n  * `type` (string) - (Optional) Item type (pair).\n  * `label` (unknown) - The key label.\n  * `info` (unknown) - (Optional) Area next to the key to display an info link.\n  * `value` (unknown) - The corresponding value for the key.\n\nEach group definition has the following properties:\n  * `type` (string) - Item type (group).\n  * `title` (string) - (Optional) An optional title for this column.\n  * `items` (ReadonlyArray<KeyValuePairProps.KeyValuePair>) - An array of\n    key-value pair items.",
+    "required": true
   },
   {
     "name": "minColumnWidth",

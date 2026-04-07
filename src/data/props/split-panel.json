@@ -1,7 +1,19 @@
 [
   {
+    "name": "ariaLabel",
+    "type": "string",
+    "description": "",
+    "required": false
+  },
+  {
     "name": "baseProps",
     "type": "BaseComponentProps",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "cappedSize",
+    "type": "number",
     "description": "",
     "required": true
   },
@@ -12,14 +24,8 @@
     "required": false
   },
   {
-    "name": "splitPanelRef",
-    "type": "unknown",
-    "description": "",
-    "required": false
-  },
-  {
-    "name": "cappedSize",
-    "type": "number",
+    "name": "onToggle",
+    "type": "() => void",
     "description": "",
     "required": true
   },
@@ -30,15 +36,9 @@
     "required": false
   },
   {
-    "name": "ariaLabel",
-    "type": "string",
+    "name": "splitPanelRef",
+    "type": "unknown",
     "description": "",
     "required": false
-  },
-  {
-    "name": "onToggle",
-    "type": "() => void",
-    "description": "",
-    "required": true
   }
 ]

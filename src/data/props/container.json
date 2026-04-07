@@ -6,21 +6,21 @@
     "required": false
   },
   {
-    "name": "disableHeaderPaddings",
-    "type": "boolean",
-    "description": "Determines whether the container header has padding. If `true`, removes the default padding from the header.",
-    "required": false
-  },
-  {
-    "name": "media",
-    "type": "ContainerProps.Media",
-    "description": "Use this slot to render a media element. Supported element types are 'img', 'video', and 'picture'.\nYou can define different positions and sizes for the media element within the container.\n\n* `content` - Use this slot to render your media element. We support `img`, `video`, `picture`, and `iframe` elements.\n\n* `position` - Defines the media slot's position within the container. Defaults to `top`.\n\n* `width` - Defines the width of the media slot when positioned on the side. Corresponds to the `width` CSS-property.\nWhen this value is set, media elements larger than the defined width may be cropped, with 'object-fit: cover' centering it.\nNote: This value is considered only when `position` is set to `side`.\nIf no width is provided, the media slot will take a maximum of 66% of the container's width.\n\n* `height` - Defines the height of the media slot when position on the top. Corresponds to the `height` CSS-property.\nWhen this value is set, media elements larger than the defined width may be cropped, with 'object-fit: cover' centering it.   * Note: This value is only considered if `position` is set to `top`.\nIf no height is provided, the media slot will be displayed at its full height.",
-    "required": false
-  },
-  {
     "name": "disableContentPaddings",
     "type": "boolean",
     "description": "Determines whether the container content has padding. If `true`, removes the default padding from the content area.",
+    "required": false
+  },
+  {
+    "name": "disableFooterPaddings",
+    "type": "boolean",
+    "description": "Determines whether the container footer has padding. If `true`, removes the default padding from the footer.",
+    "required": false
+  },
+  {
+    "name": "disableHeaderPaddings",
+    "type": "boolean",
+    "description": "Determines whether the container header has padding. If `true`, removes the default padding from the header.",
     "required": false
   },
   {
@@ -30,9 +30,9 @@
     "required": false
   },
   {
-    "name": "disableFooterPaddings",
-    "type": "boolean",
-    "description": "Determines whether the container footer has padding. If `true`, removes the default padding from the footer.",
+    "name": "media",
+    "type": "ContainerProps.Media",
+    "description": "Use this slot to render a media element. Supported element types are 'img', 'video', and 'picture'.\nYou can define different positions and sizes for the media element within the container.\n\n* `content` - Use this slot to render your media element. We support `img`, `video`, `picture`, and `iframe` elements.\n\n* `position` - Defines the media slot's position within the container. Defaults to `top`.\n\n* `width` - Defines the width of the media slot when positioned on the side. Corresponds to the `width` CSS-property.\nWhen this value is set, media elements larger than the defined width may be cropped, with 'object-fit: cover' centering it.\nNote: This value is considered only when `position` is set to `side`.\nIf no width is provided, the media slot will take a maximum of 66% of the container's width.\n\n* `height` - Defines the height of the media slot when position on the top. Corresponds to the `height` CSS-property.\nWhen this value is set, media elements larger than the defined width may be cropped, with 'object-fit: cover' centering it.   * Note: This value is only considered if `position` is set to `top`.\nIf no height is provided, the media slot will be displayed at its full height.",
     "required": false
   },
   {

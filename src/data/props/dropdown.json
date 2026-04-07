@@ -1,26 +1,8 @@
 [
   {
-    "name": "open",
-    "type": "boolean",
-    "description": "Open state of the dropdown.",
-    "required": false
-  },
-  {
-    "name": "minWidth",
-    "type": "number",
-    "description": "Minimum width for the dropdown in pixels. If no value is specified, the\ndropdown will shrink to fit its content.",
-    "required": false
-  },
-  {
-    "name": "maxWidth",
-    "type": "number",
-    "description": "Maximum width for the dropdown in pixels. If no value is specified, the\ndropdown will expand to fit its content.",
-    "required": false
-  },
-  {
-    "name": "ariaRole",
+    "name": "ariaDescribedby",
     "type": "string",
-    "description": "Adds `role` to the dropdown content element.",
+    "description": "Adds `aria-describedby` to the dropdown content element.",
     "required": false
   },
   {
@@ -36,9 +18,27 @@
     "required": false
   },
   {
-    "name": "ariaDescribedby",
+    "name": "ariaRole",
     "type": "string",
-    "description": "Adds `aria-describedby` to the dropdown content element.",
+    "description": "Adds `role` to the dropdown content element.",
+    "required": false
+  },
+  {
+    "name": "maxWidth",
+    "type": "number",
+    "description": "Maximum width for the dropdown in pixels. If no value is specified, the\ndropdown will expand to fit its content.",
+    "required": false
+  },
+  {
+    "name": "minWidth",
+    "type": "number",
+    "description": "Minimum width for the dropdown in pixels. If no value is specified, the\ndropdown will shrink to fit its content.",
+    "required": false
+  },
+  {
+    "name": "open",
+    "type": "boolean",
+    "description": "Open state of the dropdown.",
     "required": false
   }
 ]

@@ -108,7 +108,7 @@ function extractProps(componentName: string): PropInfo[] {
     props.push(prop);
   }
 
-  return props;
+  return props.sort((a, b) => a.name.localeCompare(b.name));
 }
 
 // ─── Main ──────────────────────────────────────────────

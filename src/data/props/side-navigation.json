@@ -1,14 +1,14 @@
 [
   {
-    "name": "header",
-    "type": "SideNavigationProps.Header",
-    "description": "Controls the header that appears at the top of the navigation component.\n\nIt contains the following:\n- `text` (string) - Specifies the header text.\n- `href` (string) - Specifies the `href` that the header links to.\n- `logo` (object) - Specifies a logo image.",
-    "required": false
-  },
-  {
     "name": "activeHref",
     "type": "string",
     "description": "Specifies the `href` of the currently active link.\nAll items within the navigation with a matching `href` are highlighted.\n\n`Sections` and `Expandable Page Groups` that contain a highlighted item\nare automatically expanded, unless their definitions have the `defaultExpanded`\nproperty explicitly set to `false`.",
+    "required": false
+  },
+  {
+    "name": "header",
+    "type": "SideNavigationProps.Header",
+    "description": "Controls the header that appears at the top of the navigation component.\n\nIt contains the following:\n- `text` (string) - Specifies the header text.\n- `href` (string) - Specifies the `href` that the header links to.\n- `logo` (object) - Specifies a logo image.",
     "required": false
   },
   {

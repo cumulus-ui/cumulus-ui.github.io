@@ -1,8 +1,8 @@
 [
   {
-    "name": "onClick",
-    "type": "MouseEventHandler<HTMLElement>",
-    "description": "Called when the user clicks on the item card.",
+    "name": "fullHeight",
+    "type": "boolean",
+    "description": "Makes the item card stretch to fill the full height of its container.",
     "required": false
   },
   {
@@ -12,15 +12,15 @@
     "required": false
   },
   {
-    "name": "fullHeight",
-    "type": "boolean",
-    "description": "Makes the item card stretch to fill the full height of its container.",
-    "required": false
-  },
-  {
     "name": "metadataAttributes",
     "type": "Record<string, string | undefined>",
     "description": "Specifies metadata for analytics in cards",
+    "required": false
+  },
+  {
+    "name": "onClick",
+    "type": "MouseEventHandler<HTMLElement>",
+    "description": "Called when the user clicks on the item card.",
     "required": false
   }
 ]

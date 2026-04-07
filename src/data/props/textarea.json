@@ -1,14 +1,14 @@
 [
   {
-    "name": "rows",
-    "type": "number",
-    "description": "Specifies the number of lines of text to set the height to.",
-    "required": false
-  },
-  {
     "name": "disableBrowserSpellcheck",
     "type": "boolean",
     "description": "Specifies whether to disable browser spellcheck feature.\nIf you set this to `true`, it disables native browser capability\nthat checks for spelling/grammar errors.\nIf you don't set it, the behavior follows the default behavior\nof the user's browser.",
+    "required": false
+  },
+  {
+    "name": "rows",
+    "type": "number",
+    "description": "Specifies the number of lines of text to set the height to.",
     "required": false
   }
 ]

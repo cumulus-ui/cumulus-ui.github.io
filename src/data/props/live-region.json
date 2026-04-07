@@ -7,16 +7,16 @@
     "defaultValue": "false"
   },
   {
-    "name": "tagName",
-    "type": "LiveRegionProps.TagName",
-    "description": "The tag name to use for the wrapper around the `children` slot.",
-    "required": false
-  },
-  {
     "name": "hidden",
     "type": "boolean",
     "description": "Determines whether to visually hide the contents of the `children` slot.",
     "required": false,
     "defaultValue": "false"
+  },
+  {
+    "name": "tagName",
+    "type": "LiveRegionProps.TagName",
+    "description": "The tag name to use for the wrapper around the `children` slot.",
+    "required": false
   }
 ]

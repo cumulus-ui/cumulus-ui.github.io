@@ -1,8 +1,8 @@
 [
   {
-    "name": "variant",
-    "type": "CopyToClipboardProps.Variant",
-    "description": "Determines the general styling of the copy button as follows:\n\n* `button` to display a standalone secondary button with an icon, and `copyButtonText` as text.\n* `icon` to display a standalone icon-only (no text) button.\n* `inline` to display an icon-only (no text) button within a text context.\n\nDefaults to `button`.",
+    "name": "copyButtonAriaLabel",
+    "type": "string",
+    "description": "Adds `aria-label` to the copy button. Use this to provide an accessible name for buttons that don't have visible text,\nand to distinguish between multiple buttons with identical visible text. The text will also be added to the `title` attribute of the button.",
     "required": false
   },
   {
@@ -12,9 +12,33 @@
     "required": false
   },
   {
-    "name": "copyButtonAriaLabel",
+    "name": "copyErrorText",
     "type": "string",
-    "description": "Adds `aria-label` to the copy button. Use this to provide an accessible name for buttons that don't have visible text,\nand to distinguish between multiple buttons with identical visible text. The text will also be added to the `title` attribute of the button.",
+    "description": "The message shown when the text is not copied due to an error, see [https://w3c.github.io/clipboard-apis/#dom-clipboard-writetext](https://w3c.github.io/clipboard-apis/#dom-clipboard-writetext).",
+    "required": true
+  },
+  {
+    "name": "copySuccessText",
+    "type": "string",
+    "description": "The message shown when the text is copied successfully.",
+    "required": true
+  },
+  {
+    "name": "disabled",
+    "type": "boolean",
+    "description": "Renders the copy to clipboard button as disabled and prevents clicks.",
+    "required": false
+  },
+  {
+    "name": "disabledReason",
+    "type": "string",
+    "description": "Provides a reason why the copy to clipboard button is disabled (only when `disabled` is `true`).\nIf provided, the copy to clipboard button becomes focusable.\nApplicable for all variants except inline.",
+    "required": false
+  },
+  {
+    "name": "popoverRenderWithPortal",
+    "type": "boolean",
+    "description": "By default, the popover is constrained to fit inside its parent\n[stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).\nEnabling this property will allow the popover to be rendered in the root stack context using\n[React Portals](https://reactjs.org/docs/portals.html).\nEnable this setting if you need the popover to ignore its parent stacking context.",
     "required": false
   },
   {
@@ -30,33 +54,9 @@
     "required": false
   },
   {
-    "name": "copySuccessText",
-    "type": "string",
-    "description": "The message shown when the text is copied successfully.",
-    "required": true
-  },
-  {
-    "name": "copyErrorText",
-    "type": "string",
-    "description": "The message shown when the text is not copied due to an error, see [https://w3c.github.io/clipboard-apis/#dom-clipboard-writetext](https://w3c.github.io/clipboard-apis/#dom-clipboard-writetext).",
-    "required": true
-  },
-  {
-    "name": "popoverRenderWithPortal",
-    "type": "boolean",
-    "description": "By default, the popover is constrained to fit inside its parent\n[stacking context](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Positioning/Understanding_z_index/The_stacking_context).\nEnabling this property will allow the popover to be rendered in the root stack context using\n[React Portals](https://reactjs.org/docs/portals.html).\nEnable this setting if you need the popover to ignore its parent stacking context.",
-    "required": false
-  },
-  {
-    "name": "disabled",
-    "type": "boolean",
-    "description": "Renders the copy to clipboard button as disabled and prevents clicks.",
-    "required": false
-  },
-  {
-    "name": "disabledReason",
-    "type": "string",
-    "description": "Provides a reason why the copy to clipboard button is disabled (only when `disabled` is `true`).\nIf provided, the copy to clipboard button becomes focusable.\nApplicable for all variants except inline.",
+    "name": "variant",
+    "type": "CopyToClipboardProps.Variant",
+    "description": "Determines the general styling of the copy button as follows:\n\n* `button` to display a standalone secondary button with an icon, and `copyButtonText` as text.\n* `icon` to display a standalone icon-only (no text) button.\n* `inline` to display an icon-only (no text) button within a text context.\n\nDefaults to `button`.",
     "required": false
   }
 ]

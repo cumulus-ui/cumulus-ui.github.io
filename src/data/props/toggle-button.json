@@ -1,8 +1,8 @@
 [
   {
-    "name": "variant",
-    "type": "ToggleButtonProps.Variant",
-    "description": "Determines the general styling of the toggle button as follows:\n* `normal` for secondary buttons.\n* `icon` to display an icon only (no text).\n\nDefaults to `normal` if not specified.",
+    "name": "disabledReason",
+    "type": "string",
+    "description": "Provides a reason why the button is disabled (only when `disabled` is `true`).\nIf provided, the button becomes focusable.\nApplicable only for the normal variant.",
     "required": false
   },
   {
@@ -10,6 +10,12 @@
     "type": "IconProps.Name",
     "description": "Displays an icon next to the text.",
     "required": false
+  },
+  {
+    "name": "pressed",
+    "type": "boolean",
+    "description": "Sets the toggle button to pressed state.",
+    "required": true
   },
   {
     "name": "pressedIconName",
@@ -24,15 +30,9 @@
     "required": false
   },
   {
-    "name": "pressed",
-    "type": "boolean",
-    "description": "Sets the toggle button to pressed state.",
-    "required": true
-  },
-  {
-    "name": "disabledReason",
-    "type": "string",
-    "description": "Provides a reason why the button is disabled (only when `disabled` is `true`).\nIf provided, the button becomes focusable.\nApplicable only for the normal variant.",
+    "name": "variant",
+    "type": "ToggleButtonProps.Variant",
+    "description": "Determines the general styling of the toggle button as follows:\n* `normal` for secondary buttons.\n* `icon` to display an icon only (no text).\n\nDefaults to `normal` if not specified.",
     "required": false
   }
 ]

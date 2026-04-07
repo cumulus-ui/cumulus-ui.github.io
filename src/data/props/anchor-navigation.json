@@ -1,8 +1,8 @@
 [
   {
-    "name": "ariaLabelledby",
+    "name": "activeHref",
     "type": "string",
-    "description": "Adds `aria-labelledby` to the component.\n\nUse this property for identifying the header or title that labels the anchor navigation.\nTo use it correctly, define an ID for the element either as label, and set the property to that ID.",
+    "description": "Specifies the active anchor href. When set, the component will operate in a\ncontrolled manner, and internal scroll-spy will be disabled.",
     "required": false
   },
   {
@@ -13,9 +13,9 @@
     "defaultValue": "[]"
   },
   {
-    "name": "activeHref",
+    "name": "ariaLabelledby",
     "type": "string",
-    "description": "Specifies the active anchor href. When set, the component will operate in a\ncontrolled manner, and internal scroll-spy will be disabled.",
+    "description": "Adds `aria-labelledby` to the component.\n\nUse this property for identifying the header or title that labels the anchor navigation.\nTo use it correctly, define an ID for the element either as label, and set the property to that ID.",
     "required": false
   },
   {

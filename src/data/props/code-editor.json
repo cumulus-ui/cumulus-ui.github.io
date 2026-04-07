@@ -6,10 +6,22 @@
     "required": true
   },
   {
-    "name": "value",
+    "name": "ariaLabel",
     "type": "string",
-    "description": "Specifies the content that's displayed in the code editor.",
-    "required": true
+    "description": "Adds `aria-label` to the code editor's textarea element.",
+    "required": false
+  },
+  {
+    "name": "editorContentHeight",
+    "type": "number",
+    "description": "Specifies the height of the code editor document.",
+    "required": false
+  },
+  {
+    "name": "i18nStrings",
+    "type": "CodeEditorProps.I18nStrings",
+    "description": "An object containing all the necessary localized strings required by the component.\nThe object should contain, among others:\n\n* `loadingState` - Specifies the text to display while the component is loading.\n* `errorState` - Specifies the text to display if there is an error loading Ace.\n* `errorStateRecovery`: Specifies the text for the recovery button that's displayed next to the error text.\n   Use the `recoveryClick` event to do a recovery action (for example, retrying the request).",
+    "required": false
   },
   {
     "name": "language",
@@ -21,6 +33,12 @@
     "name": "languageLabel",
     "type": "string",
     "description": "Specifies a custom label language. If set, it overrides the default language label.",
+    "required": false
+  },
+  {
+    "name": "loading",
+    "type": "boolean",
+    "description": "Renders the code editor in a loading state.",
     "required": false
   },
   {
@@ -36,27 +54,9 @@
     "required": false
   },
   {
-    "name": "loading",
-    "type": "boolean",
-    "description": "Renders the code editor in a loading state.",
-    "required": false
-  },
-  {
-    "name": "i18nStrings",
-    "type": "CodeEditorProps.I18nStrings",
-    "description": "An object containing all the necessary localized strings required by the component.\nThe object should contain, among others:\n\n* `loadingState` - Specifies the text to display while the component is loading.\n* `errorState` - Specifies the text to display if there is an error loading Ace.\n* `errorStateRecovery`: Specifies the text for the recovery button that's displayed next to the error text.\n   Use the `recoveryClick` event to do a recovery action (for example, retrying the request).",
-    "required": false
-  },
-  {
-    "name": "editorContentHeight",
-    "type": "number",
-    "description": "Specifies the height of the code editor document.",
-    "required": false
-  },
-  {
-    "name": "ariaLabel",
+    "name": "value",
     "type": "string",
-    "description": "Adds `aria-label` to the code editor's textarea element.",
-    "required": false
+    "description": "Specifies the content that's displayed in the code editor.",
+    "required": true
   }
 ]

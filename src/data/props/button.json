@@ -1,32 +1,14 @@
 [
   {
-    "name": "iconAlign",
-    "type": "ButtonProps.IconAlign",
-    "description": "Specifies the alignment of the icon.",
+    "name": "ariaExpanded",
+    "type": "boolean",
+    "description": "Adds aria-expanded to the button element. Use when the button controls an expandable element.",
     "required": false
   },
   {
-    "name": "formAction",
-    "type": "ButtonProps.FormAction",
-    "description": "The form action that is performed by a button click.",
-    "required": false
-  },
-  {
-    "name": "href",
-    "type": "string",
-    "description": "Applies button styling to a link. Use this property if you need a link styled as a button (`variant=link`).\nFor example, if you have a 'help' button that links to a documentation page.",
-    "required": false
-  },
-  {
-    "name": "target",
-    "type": "string",
-    "description": "Specifies where to open the linked URL (for example, to open in a new browser window or tab use `_blank`).\nThis property only applies when an `href` is provided.",
-    "required": false
-  },
-  {
-    "name": "rel",
-    "type": "string",
-    "description": "Adds a `rel` attribute to the link. By default, the component sets the `rel` attribute to \"noopener noreferrer\" when `target` is `\"_blank\"`.\nIf the `rel` property is provided, it overrides the default behavior.",
+    "name": "ariaHaspopup",
+    "type": "boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog'",
+    "description": "Adds `aria-haspopup` to the button element. Use when the button triggers a popup element such as a menu, listbox, tree, grid, or dialog.",
     "required": false
   },
   {
@@ -42,15 +24,9 @@
     "required": false
   },
   {
-    "name": "ariaExpanded",
-    "type": "boolean",
-    "description": "Adds aria-expanded to the button element. Use when the button controls an expandable element.",
-    "required": false
-  },
-  {
-    "name": "ariaHaspopup",
-    "type": "boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog'",
-    "description": "Adds `aria-haspopup` to the button element. Use when the button triggers a popup element such as a menu, listbox, tree, grid, or dialog.",
+    "name": "formAction",
+    "type": "ButtonProps.FormAction",
+    "description": "The form action that is performed by a button click.",
     "required": false
   },
   {
@@ -60,15 +36,39 @@
     "required": false
   },
   {
-    "name": "variant",
-    "type": "ButtonProps.Variant",
-    "description": "Determines the general styling of the button as follows:\n* `primary` for primary buttons.\n* `normal` for secondary buttons.\n* `link` for tertiary buttons.\n* `icon` to display an icon only (no text).\n* `inline-icon` to display an icon-only (no text) button within a text context.\n* `inline-link` to display a tertiary button with no outer padding.",
+    "name": "href",
+    "type": "string",
+    "description": "Applies button styling to a link. Use this property if you need a link styled as a button (`variant=link`).\nFor example, if you have a 'help' button that links to a documentation page.",
+    "required": false
+  },
+  {
+    "name": "iconAlign",
+    "type": "ButtonProps.IconAlign",
+    "description": "Specifies the alignment of the icon.",
     "required": false
   },
   {
     "name": "iconAlt",
     "type": "string",
     "description": "Specifies alternate text for a custom icon. We recommend that you provide this for accessibility.\nThis property is ignored if you use a predefined icon or if you set your custom icon using the `iconSvg` slot.",
+    "required": false
+  },
+  {
+    "name": "rel",
+    "type": "string",
+    "description": "Adds a `rel` attribute to the link. By default, the component sets the `rel` attribute to \"noopener noreferrer\" when `target` is `\"_blank\"`.\nIf the `rel` property is provided, it overrides the default behavior.",
+    "required": false
+  },
+  {
+    "name": "target",
+    "type": "string",
+    "description": "Specifies where to open the linked URL (for example, to open in a new browser window or tab use `_blank`).\nThis property only applies when an `href` is provided.",
+    "required": false
+  },
+  {
+    "name": "variant",
+    "type": "ButtonProps.Variant",
+    "description": "Determines the general styling of the button as follows:\n* `primary` for primary buttons.\n* `normal` for secondary buttons.\n* `link` for tertiary buttons.\n* `icon` to display an icon only (no text).\n* `inline-icon` to display an icon-only (no text) button within a text context.\n* `inline-link` to display a tertiary button with no outer padding.",
     "required": false
   }
 ]

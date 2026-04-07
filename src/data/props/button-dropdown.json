@@ -1,13 +1,7 @@
 [
   {
-    "name": "triggerRef",
-    "type": "unknown",
-    "description": "",
-    "required": true
-  },
-  {
-    "name": "testUtilsClass",
-    "type": "string",
+    "name": "ariaExpanded",
+    "type": "boolean",
     "description": "",
     "required": true
   },
@@ -42,8 +36,14 @@
     "required": true
   },
   {
-    "name": "ariaExpanded",
-    "type": "boolean",
+    "name": "testUtilsClass",
+    "type": "string",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "triggerRef",
+    "type": "unknown",
     "description": "",
     "required": true
   }

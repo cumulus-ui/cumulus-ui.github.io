@@ -1,8 +1,8 @@
 [
   {
-    "name": "type",
-    "type": "StatusIndicatorProps.Type",
-    "description": "Specifies the status type.",
+    "name": "colorOverride",
+    "type": "StatusIndicatorProps.Color",
+    "description": "Specifies an override for the status indicator color.",
     "required": false
   },
   {
@@ -12,9 +12,9 @@
     "required": false
   },
   {
-    "name": "colorOverride",
-    "type": "StatusIndicatorProps.Color",
-    "description": "Specifies an override for the status indicator color.",
+    "name": "type",
+    "type": "StatusIndicatorProps.Type",
+    "description": "Specifies the status type.",
     "required": false
   },
   {

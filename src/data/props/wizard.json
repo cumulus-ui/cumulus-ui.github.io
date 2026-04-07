@@ -1,20 +1,20 @@
 [
   {
-    "name": "analyticsMetadata",
-    "type": "WizardProps.AnalyticsMetadata",
-    "description": "Specifies additional analytics-related metadata.\n* `instanceIdentifier` - A unique string that identifies this component instance in your application.\n* `flowType` - Identifies the type of flow represented by the component.\n* `resourceType` - Identifies the type of resource represented by the flow. **Note:** This API is currently experimental.",
-    "required": false
-  },
-  {
-    "name": "steps",
-    "type": "ReadonlyArray<WizardProps.Step>",
-    "description": "Array of step objects. Each object represents a step in the wizard with the following properties:\n\n- `title` (string) - Text that's displayed as the title in the navigation pane and form header.\n- `info` (unknown) - (Optional) Area for a page level info link that's displayed in the form header.\n   The page level info link should trigger the default help panel content for the step. Use the [link component](/components/link/) to display the link.\n- `description` (unknown) - (Optional) Area below the form header for a page level description text to further explain the purpose, goal, or main actions of the step.\n- `content` (unknown) - Main content area to display form sections, form fields, and controls.\n- `errorText` (unknown) - (Optional) Error text that's displayed in a page level error alert.\n   Use this for rendering actionable server-side validation failure messages.\n- `isOptional` (boolean) - Specifies whether the step is optional or required. If set to `true`, the text from `i18nStrings.optional`\n   is rendered next to the `title` in the navigation step label and the form header title.\n- `analyticsMetadata` (WizardProps.StepAnalyticsMetadata) - (Optional) Specifies additional analytics-related metadata.",
-    "required": true
-  },
-  {
     "name": "activeStepIndex",
     "type": "number",
     "description": "Index of the step that's currently displayed. The first step has an index of zero (0).\n\nIf you don't set this property, the component starts on the first step and switches step automatically\nwhen a user navigates using the buttons or an enabled step link in the navigation pane (that is, uncontrolled behavior).\n\nIf you provide a value for this property, you must also set an `onNavigate` listener to update the property when\na user navigates (that is, controlled behavior).\n\nIf you set it to a value that exceeds the maximum value (that is, the number of steps minus 1), its value is ignored and the component uses the maximum value.",
+    "required": false
+  },
+  {
+    "name": "allowSkipTo",
+    "type": "boolean",
+    "description": "When set to `false`, the *skip-to* button is never shown.\nWhen set to `true`, the *skip-to* button may appear to offer faster navigation for the user.\n\nThe *skip-to* button only allows to skip optional steps. It is shown when there is one or more optional\nsteps ahead having no required steps in-between.\n\nNote: the *skip-to* button requires the function i18nStrings.skipToButtonLabel to be defined.\n\nDefaults to `false`.",
+    "required": false
+  },
+  {
+    "name": "analyticsMetadata",
+    "type": "WizardProps.AnalyticsMetadata",
+    "description": "Specifies additional analytics-related metadata.\n* `instanceIdentifier` - A unique string that identifies this component instance in your application.\n* `flowType` - Identifies the type of flow represented by the component.\n* `resourceType` - Identifies the type of resource represented by the flow. **Note:** This API is currently experimental.",
     "required": false
   },
   {
@@ -24,21 +24,21 @@
     "required": false
   },
   {
-    "name": "submitButtonText",
-    "type": "string",
-    "description": "The text of the button that enables the user to submit the form.",
-    "required": false
-  },
-  {
     "name": "isLoadingNextStep",
     "type": "boolean",
     "description": "Renders the *next* or *submit* button in a loading state.\n\nUse this if you need to wait for a response from the server before the user can proceed to the next step, such as during server-side validation or retrieving the next step's information.",
     "required": false
   },
   {
-    "name": "allowSkipTo",
-    "type": "boolean",
-    "description": "When set to `false`, the *skip-to* button is never shown.\nWhen set to `true`, the *skip-to* button may appear to offer faster navigation for the user.\n\nThe *skip-to* button only allows to skip optional steps. It is shown when there is one or more optional\nsteps ahead having no required steps in-between.\n\nNote: the *skip-to* button requires the function i18nStrings.skipToButtonLabel to be defined.\n\nDefaults to `false`.",
+    "name": "steps",
+    "type": "ReadonlyArray<WizardProps.Step>",
+    "description": "Array of step objects. Each object represents a step in the wizard with the following properties:\n\n- `title` (string) - Text that's displayed as the title in the navigation pane and form header.\n- `info` (unknown) - (Optional) Area for a page level info link that's displayed in the form header.\n   The page level info link should trigger the default help panel content for the step. Use the [link component](/components/link/) to display the link.\n- `description` (unknown) - (Optional) Area below the form header for a page level description text to further explain the purpose, goal, or main actions of the step.\n- `content` (unknown) - Main content area to display form sections, form fields, and controls.\n- `errorText` (unknown) - (Optional) Error text that's displayed in a page level error alert.\n   Use this for rendering actionable server-side validation failure messages.\n- `isOptional` (boolean) - Specifies whether the step is optional or required. If set to `true`, the text from `i18nStrings.optional`\n   is rendered next to the `title` in the navigation step label and the form header title.\n- `analyticsMetadata` (WizardProps.StepAnalyticsMetadata) - (Optional) Specifies additional analytics-related metadata.",
+    "required": true
+  },
+  {
+    "name": "submitButtonText",
+    "type": "string",
+    "description": "The text of the button that enables the user to submit the form.",
     "required": false
   }
 ]
