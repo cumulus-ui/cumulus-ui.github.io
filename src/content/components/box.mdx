@@ -1,0 +1,53 @@
+---
+title: Box
+description: A layout primitive for spacing, typography, and color — the building block of every Cloudscape layout.
+tag: cs-box
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Typography variants">
+  <cs-box variant="h1">Heading 1</cs-box>
+  <cs-box variant="h2">Heading 2</cs-box>
+  <cs-box variant="h3">Heading 3</cs-box>
+  <cs-box variant="p">Paragraph text</cs-box>
+  <cs-box variant="small">Small text</cs-box>
+  <cs-box variant="code">code snippet</cs-box>
+</ComponentPreview>
+
+<ComponentPreview label="Text colors">
+  <cs-box color="text-status-success">Success</cs-box>
+  <cs-box color="text-status-error">Error</cs-box>
+  <cs-box color="text-status-warning">Warning</cs-box>
+  <cs-box color="text-status-info">Info</cs-box>
+  <cs-box color="text-status-inactive">Inactive</cs-box>
+  <cs-box color="text-label">Label</cs-box>
+  <cs-box color="text-body-secondary">Secondary</cs-box>
+</ComponentPreview>
+
+<ComponentPreview label="Font weight">
+  <cs-box font-weight="light">Light</cs-box>
+  <cs-box font-weight="normal">Normal</cs-box>
+  <cs-box font-weight="bold">Bold</cs-box>
+  <cs-box font-weight="heavy">Heavy</cs-box>
+</ComponentPreview>
+
+<ComponentPreview label="Padding">
+  <cs-box padding="s" variant="p" style="background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);">padding="s"</cs-box>
+  <cs-box padding="l" variant="p" style="background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);">padding="l"</cs-box>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-box variant="h2">Section title</cs-box>
+<cs-box variant="p" color="text-body-secondary">Description text</cs-box>
+<cs-box padding="s">Padded content</cs-box>
+<cs-box variant="code">inline code</cs-box>
+```
+
+## Properties
+
+<PropsTable component="box" />
