@@ -19,63 +19,132 @@ try {
 } catch {
   // No props JSON generated yet for this component
 }
+
+// Build the type prefix to strip: "box" → "BoxProps.", "radio-group" → "RadioGroupProps."
+const pascalName = component
+  .split("-")
+  .map((s: string) => s.charAt(0).toUpperCase() + s.slice(1))
+  .join("");
+const typePrefix = `${pascalName}Props.`;
+
+function stripPrefix(type: string): string {
+  return type.replaceAll(typePrefix, "");
+}
 ---
 
 {props.length > 0 && (
-  <table class="props-table">
-    <thead>
-      <tr>
-        <th>Property</th>
-        <th>Type</th>
-        <th>Default</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      {props.map(prop => (
-        <tr>
-          <td><code>{prop.name}</code></td>
-          <td><code>{prop.type}</code></td>
-          <td>{prop.required ? <em>required</em> : prop.defaultValue ? <code>{prop.defaultValue}</code> : <code>—</code>}</td>
-          <td>{prop.description}</td>
-        </tr>
-      ))}
-    </tbody>
-  </table>
+  <dl class="props-list">
+    {props.map(prop => (
+      <div class="props-entry" id={`prop-${prop.name}`}>
+        <dt class="props-header">
+          <a class="props-name" href={`#prop-${prop.name}`}>
+            <code>{prop.name}</code>
+          </a>
+          <span class="props-type">
+            <code>{stripPrefix(prop.type)}</code>
+          </span>
+          {prop.required && (
+            <span class="props-badge props-badge--required">required</span>
+          )}
+          {!prop.required && prop.defaultValue && (
+            <span class="props-badge props-badge--default">
+              default: <code>{prop.defaultValue}</code>
+            </span>
+          )}
+        </dt>
+        <dd class="props-description">{prop.description}</dd>
+      </div>
+    ))}
+  </dl>
 )}
 
 <style>
-  .props-table {
-    width: 100%;
-    border-collapse: collapse;
+  .props-list {
     margin: 1.5rem 0;
+    padding: 0;
     font-size: 14px;
+    max-width: 1200px;
   }
 
-  .props-table th {
-    text-align: left;
-    padding: 8px 12px;
-    font-weight: 700;
-    color: var(--color-text-column-header-p3mvlz, #5f6b7a);
-    border-bottom: 2px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
-  }
-
-  .props-table td {
-    padding: 8px 12px;
+  .props-entry {
+    padding: 16px 0;
     border-bottom: 1px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
-    vertical-align: top;
   }
 
-  .props-table code {
+  .props-entry:first-child {
+    border-top: 1px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
+  }
+
+  .props-header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 8px;
+    margin: 0;
+    font-weight: 400;
+  }
+
+  .props-name code {
+    font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--color-text-column-header-p3mvlz, #414d5c);
+    background: none;
+    padding: 0;
+  }
+
+  .props-name {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .props-name:hover code {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .props-type code {
+    font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
     font-size: 13px;
-    padding: 2px 6px;
-    border-radius: 4px;
+    color: var(--color-text-column-header-p3mvlz, #5f6b7a);
     background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);
+    padding: 2px 8px;
+    border-radius: 4px;
+    word-break: break-word;
+  }
+
+  .props-badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    padding: 2px 8px;
+    border-radius: 4px;
     white-space: nowrap;
   }
 
-  .props-table td:nth-child(2) code {
-    white-space: normal;
-    word-break: break-word;
+  .props-badge--required {
+    background: #fdf3f1;
+    color: #d91515;
+  }
+
+  .props-badge--default code {
+    font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
+    font-size: 11px;
+    background: none;
+    padding: 0;
+  }
+
+  .props-badge--default {
+    background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);
+    color: var(--color-text-column-header-p3mvlz, #5f6b7a);
+  }
+
+  .props-description {
+    margin: 8px 0 0;
+    padding: 0;
+    line-height: 1.6;
+    color: var(--color-text-column-header-p3mvlz, #414d5c);
+    white-space: pre-line;
   }
 </style>
