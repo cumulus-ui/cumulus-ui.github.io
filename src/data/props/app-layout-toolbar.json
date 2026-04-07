@@ -1,0 +1,14 @@
+[
+  {
+    "name": "navigationTriggerHide",
+    "type": "boolean",
+    "description": "If `true`, the navigation trigger is not displayed at all,\nwhile navigation drawer might be displayed, but opened using a custom trigger.",
+    "required": false
+  },
+  {
+    "name": "drawers",
+    "type": "Array<AppLayoutToolbarProps.Drawer>",
+    "description": "Drawers property. If you set both `drawers` and `tools`, `drawers` will take precedence.\n  Each Drawer is an item in the drawers wrapper with the following properties:\n* id (string) - the id of the drawer.\n* content (unknown) - the content in the drawer.\n* trigger (DrawerTrigger) - (Optional) the button that opens and closes the active drawer.\nIf not set, a corresponding trigger button is not displayed, while the drawer might be displayed, but opened using a custom trigger.\n* ariaLabels (DrawerAriaLabels) - the labels for the interactive elements of the drawer.\n* badge (boolean) - (Optional) Adds a badge to the corner of the icon to indicate a state change. For example: Unread notifications.\n* resizable (boolean) - (Optional) if the drawer is resizable or not.\n* defaultSize (number) - (Optional) starting size of the drawer. if not set, defaults to 290.\n* onResize (({ size: number }) => void) - (Optional) Fired when the active drawer is resized.\n\n#### DrawerTrigger\n- `iconName` (IconProps.Name) - (Optional) Specifies the icon to be displayed.\n- `iconSvg` (unknown) - (Optional) Specifies the SVG of a custom icon. For more information, see [SVG icon guidelines](/components/icon/?tabId=api#slots)\n\n#### DrawerAriaLabels\n- `drawerName` (string) - Label for the drawer itself, and for the drawer trigger button tooltip text.\n- `closeButton` (string) - (Optional) Label for the close button.\n- `triggerButton` (string) - (Optional) Label for the trigger button.\n- `resizeHandle` (string) - (Optional) Label for the resize handle.",
+    "required": false
+  }
+]

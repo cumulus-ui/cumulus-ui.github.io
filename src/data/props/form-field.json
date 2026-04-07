@@ -1,0 +1,26 @@
+[
+  {
+    "name": "__hideLabel",
+    "type": "boolean",
+    "description": "Visually hide the label.",
+    "required": false
+  },
+  {
+    "name": "__disableGutters",
+    "type": "boolean",
+    "description": "Disable the gutter applied by default.",
+    "required": false
+  },
+  {
+    "name": "__analyticsMetadata",
+    "type": "AnalyticsMetadata",
+    "description": "",
+    "required": false
+  },
+  {
+    "name": "__style",
+    "type": "CSSProperties",
+    "description": "",
+    "required": false
+  }
+]

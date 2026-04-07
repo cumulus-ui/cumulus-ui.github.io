@@ -1,5 +1,6 @@
 ---
 import '@cumulus-ui/styles/index.css';
+import ThemeToggle from '../components/ThemeToggle.astro';
 
 interface Props {
   title: string;
@@ -19,7 +20,9 @@ const { title } = Astro.props;
     </script>
   </head>
   <body>
+    <ThemeToggle />
     <slot />
+  <script>import '@cumulus-ui/components';</script>
   </body>
 </html>
 

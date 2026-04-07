@@ -1,0 +1,74 @@
+[
+  {
+    "name": "iconAlign",
+    "type": "ButtonProps.IconAlign",
+    "description": "Specifies the alignment of the icon.",
+    "required": false
+  },
+  {
+    "name": "formAction",
+    "type": "ButtonProps.FormAction",
+    "description": "The form action that is performed by a button click.",
+    "required": false
+  },
+  {
+    "name": "href",
+    "type": "string",
+    "description": "Applies button styling to a link. Use this property if you need a link styled as a button (`variant=link`).\nFor example, if you have a 'help' button that links to a documentation page.",
+    "required": false
+  },
+  {
+    "name": "target",
+    "type": "string",
+    "description": "Specifies where to open the linked URL (for example, to open in a new browser window or tab use `_blank`).\nThis property only applies when an `href` is provided.",
+    "required": false
+  },
+  {
+    "name": "rel",
+    "type": "string",
+    "description": "Adds a `rel` attribute to the link. By default, the component sets the `rel` attribute to \"noopener noreferrer\" when `target` is `\"_blank\"`.\nIf the `rel` property is provided, it overrides the default behavior.",
+    "required": false
+  },
+  {
+    "name": "download",
+    "type": "boolean | string",
+    "description": "Specifies whether the linked URL, when selected, will prompt the user to download instead of navigate.\nYou can specify a string value that will be suggested as the name of the downloaded file.\nThis property only applies when an `href` is provided.",
+    "required": false
+  },
+  {
+    "name": "form",
+    "type": "string",
+    "description": "The id of the <form> element to associate with the button. The value of this attribute must be the id of a <form> in the same document.\nUse when a button is not the descendant of a form element, such as when used in a modal.",
+    "required": false
+  },
+  {
+    "name": "ariaExpanded",
+    "type": "boolean",
+    "description": "Adds aria-expanded to the button element. Use when the button controls an expandable element.",
+    "required": false
+  },
+  {
+    "name": "ariaHaspopup",
+    "type": "boolean | 'menu' | 'listbox' | 'tree' | 'grid' | 'dialog'",
+    "description": "Adds `aria-haspopup` to the button element. Use when the button triggers a popup element such as a menu, listbox, tree, grid, or dialog.",
+    "required": false
+  },
+  {
+    "name": "fullWidth",
+    "type": "boolean",
+    "description": "Sets the button width to be 100% of the parent container width. Button content is centered.",
+    "required": false
+  },
+  {
+    "name": "variant",
+    "type": "ButtonProps.Variant",
+    "description": "Determines the general styling of the button as follows:\n* `primary` for primary buttons.\n* `normal` for secondary buttons.\n* `link` for tertiary buttons.\n* `icon` to display an icon only (no text).\n* `inline-icon` to display an icon-only (no text) button within a text context.\n* `inline-link` to display a tertiary button with no outer padding.",
+    "required": false
+  },
+  {
+    "name": "iconAlt",
+    "type": "string",
+    "description": "Specifies alternate text for a custom icon. We recommend that you provide this for accessibility.\nThis property is ignored if you use a predefined icon or if you set your custom icon using the `iconSvg` slot.",
+    "required": false
+  }
+]

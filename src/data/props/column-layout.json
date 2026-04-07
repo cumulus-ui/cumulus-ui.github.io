@@ -1,0 +1,14 @@
+[
+  {
+    "name": "__breakpoint",
+    "type": "ColumnLayoutBreakpoint",
+    "description": "",
+    "required": false
+  },
+  {
+    "name": "__tagOverride",
+    "type": "'dl'",
+    "description": "Overrides the default wrapper HTML tag.",
+    "required": false
+  }
+]

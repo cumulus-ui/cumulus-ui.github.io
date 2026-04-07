@@ -1,0 +1,20 @@
+[
+  {
+    "name": "type",
+    "type": "InputProps.Type",
+    "description": "Specifies the type of control to render.\nInputs with a `number` type use the native element behavior, which might\nbe slightly different across browsers.",
+    "required": false
+  },
+  {
+    "name": "inputMode",
+    "type": "InputProps.InputMode",
+    "description": "Adds a hint to the browser about the type of data a user may enter into this field.\nSome devices may render a different virtual keyboard depending on this value.\nThis value may not be supported by all browsers or devices.",
+    "required": false
+  },
+  {
+    "name": "step",
+    "type": "InputProps.Step",
+    "description": "The step attribute is a number that specifies the granularity that the value\nmust adhere to or the keyword \"any\". It is valid for the numeric input types,\nincluding the date, month, week, time, datetime-local, number and range types.",
+    "required": false
+  }
+]

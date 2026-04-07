@@ -1,0 +1,56 @@
+[
+  {
+    "name": "actionButtonIconName",
+    "type": "IconProps.Name",
+    "description": "Determines what icon to display in the action button.",
+    "required": false
+  },
+  {
+    "name": "actionButtonIconUrl",
+    "type": "string",
+    "description": "Specifies the URL of a custom icon. Use this property if the icon you want isn't available.\n\nIf you set both `actionButtonIconUrl` and `actionButtonIconSvg`, `actionButtonIconSvg` will take precedence.",
+    "required": false
+  },
+  {
+    "name": "actionButtonIconAlt",
+    "type": "string",
+    "description": "Specifies alternate text for a custom icon. We recommend that you provide this for accessibility.\nThis property is ignored if you use a predefined icon or if you set your custom icon using the `iconSvg` slot.",
+    "required": false
+  },
+  {
+    "name": "actionButtonAriaLabel",
+    "type": "string",
+    "description": "Adds an aria-label to the action button.",
+    "required": false
+  },
+  {
+    "name": "disableActionButton",
+    "type": "boolean",
+    "description": "Specifies whether to disable the action button.",
+    "required": false
+  },
+  {
+    "name": "minRows",
+    "type": "number",
+    "description": "Specifies the minimum number of lines of text to set the height to.",
+    "required": false
+  },
+  {
+    "name": "maxRows",
+    "type": "number",
+    "description": "Specifies the maximum number of lines of text the textarea will expand to.\nDefaults to 3. Use -1 for infinite rows.",
+    "required": false
+  },
+  {
+    "name": "disableSecondaryActionsPaddings",
+    "type": "boolean",
+    "description": "Determines whether the secondary actions area of the input has padding. If true, removes the default padding from the secondary actions area.",
+    "required": false
+  },
+  {
+    "name": "disableSecondaryContentPaddings",
+    "type": "boolean",
+    "description": "Determines whether the secondary content area of the input has padding. If true, removes the default padding from the secondary content area.",
+    "required": false
+  }
+]

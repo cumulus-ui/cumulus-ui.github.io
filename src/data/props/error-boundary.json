@@ -1,0 +1,8 @@
+[
+  {
+    "name": "renderFallback",
+    "type": "ErrorBoundaryProps['renderFallback']",
+    "description": "",
+    "required": false
+  }
+]

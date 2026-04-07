@@ -1,0 +1,50 @@
+[
+  {
+    "name": "triggerRef",
+    "type": "unknown",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "testUtilsClass",
+    "type": "string",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "ariaLabel",
+    "type": "string | undefined",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "disabled",
+    "type": "boolean",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "disabledReason",
+    "type": "string",
+    "description": "",
+    "required": false
+  },
+  {
+    "name": "isOpen",
+    "type": "boolean",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "onClick",
+    "type": "() => void",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "ariaExpanded",
+    "type": "boolean",
+    "description": "",
+    "required": true
+  }
+]

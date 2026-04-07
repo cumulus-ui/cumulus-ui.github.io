@@ -3,6 +3,25 @@ title: Badge
 description: A small label that displays a status or count.
 tag: cs-badge
 ---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Colors">
+  <cs-badge color="blue">Active</cs-badge>
+  <cs-badge color="grey">Inactive</cs-badge>
+  <cs-badge color="green">Success</cs-badge>
+  <cs-badge color="red">Error</cs-badge>
+</ComponentPreview>
+
+<ComponentPreview label="Severity">
+  <cs-badge color="severity-critical">Critical</cs-badge>
+  <cs-badge color="severity-high">High</cs-badge>
+  <cs-badge color="severity-medium">Medium</cs-badge>
+  <cs-badge color="severity-low">Low</cs-badge>
+  <cs-badge color="severity-neutral">Neutral</cs-badge>
+</ComponentPreview>
 
 ## Usage
 
@@ -12,9 +31,6 @@ tag: cs-badge
 <cs-badge color="red">Error</cs-badge>
 ```
 
-## Colors
+## Properties
 
-- `blue` — informational
-- `grey` — neutral / inactive
-- `red` — error / critical
-- `green` — success
+<PropsTable component="badge" />

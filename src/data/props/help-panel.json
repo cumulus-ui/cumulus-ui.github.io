@@ -1,0 +1,14 @@
+[
+  {
+    "name": "loading",
+    "type": "boolean",
+    "description": "Renders the panel in a loading state. We recommend that you also set a `loadingText`.",
+    "required": false
+  },
+  {
+    "name": "loadingText",
+    "type": "string",
+    "description": "Specifies the text that's displayed when the panel is in a loading state.",
+    "required": false
+  }
+]

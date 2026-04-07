@@ -1,0 +1,80 @@
+---
+interface Props {
+  component: string;
+}
+
+const { component } = Astro.props;
+
+let props: Array<{
+  name: string;
+  type: string;
+  description: string;
+  required: boolean;
+}> = [];
+
+try {
+  const mod = await import(`../data/props/${component}.json`);
+  props = mod.default;
+} catch {
+  // No props JSON generated yet for this component
+}
+---
+
+{props.length > 0 && (
+  <table class="props-table">
+    <thead>
+      <tr>
+        <th>Property</th>
+        <th>Type</th>
+        <th>Default</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      {props.map(prop => (
+        <tr>
+          <td><code>{prop.name}</code></td>
+          <td><code>{prop.type}</code></td>
+          <td>{prop.required ? <em>required</em> : <code>—</code>}</td>
+          <td>{prop.description}</td>
+        </tr>
+      ))}
+    </tbody>
+  </table>
+)}
+
+<style>
+  .props-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1.5rem 0;
+    font-size: 14px;
+  }
+
+  .props-table th {
+    text-align: left;
+    padding: 8px 12px;
+    font-weight: 700;
+    color: var(--color-text-column-header-p3mvlz, #5f6b7a);
+    border-bottom: 2px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
+  }
+
+  .props-table td {
+    padding: 8px 12px;
+    border-bottom: 1px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
+    vertical-align: top;
+  }
+
+  .props-table code {
+    font-size: 13px;
+    padding: 2px 6px;
+    border-radius: 4px;
+    background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);
+    white-space: nowrap;
+  }
+
+  .props-table td:nth-child(2) code {
+    white-space: normal;
+    word-break: break-word;
+  }
+</style>

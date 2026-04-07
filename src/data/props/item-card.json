@@ -1,0 +1,26 @@
+[
+  {
+    "name": "onClick",
+    "type": "MouseEventHandler<HTMLElement>",
+    "description": "Called when the user clicks on the item card.",
+    "required": false
+  },
+  {
+    "name": "highlighted",
+    "type": "boolean",
+    "description": "Specifies whether the item card is in highlighted state.",
+    "required": false
+  },
+  {
+    "name": "fullHeight",
+    "type": "boolean",
+    "description": "Makes the item card stretch to fill the full height of its container.",
+    "required": false
+  },
+  {
+    "name": "metadataAttributes",
+    "type": "Record<string, string | undefined>",
+    "description": "Specifies metadata for analytics in cards",
+    "required": false
+  }
+]

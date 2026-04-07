@@ -1,0 +1,80 @@
+[
+  {
+    "name": "selectedOptions",
+    "type": "ReadonlyArray<MultiselectProps.Option>",
+    "description": "Specifies the currently selected options.\nProvide an empty array to clear the selection.",
+    "required": true
+  },
+  {
+    "name": "inlineLabelText",
+    "type": "string",
+    "description": "Specifies an inline label that appears next to the multiselect trigger.",
+    "required": false
+  },
+  {
+    "name": "keepOpen",
+    "type": "boolean",
+    "description": "Determines whether the dropdown list stays open after the user selects an item.",
+    "required": false
+  },
+  {
+    "name": "tokenLimit",
+    "type": "number",
+    "description": "Specifies the maximum number of displayed tokens. If the property isn't set, all of the tokens are displayed.",
+    "required": false
+  },
+  {
+    "name": "hideTokens",
+    "type": "boolean",
+    "description": "Hides the tokens displayed underneath the component.\nOnly use this if the selected options are displayed elsewhere on the page.",
+    "required": false
+  },
+  {
+    "name": "inlineTokens",
+    "type": "boolean",
+    "description": "Shows tokens inside the trigger instead of below it.",
+    "required": false
+  },
+  {
+    "name": "deselectAriaLabel",
+    "type": "MultiselectProps.DeselectAriaLabelFunction",
+    "description": "Specifies an `aria-label` for the token deselection button.",
+    "required": false
+  },
+  {
+    "name": "i18nStrings",
+    "type": "MultiselectProps.I18nStrings",
+    "description": "An object containing all the localized strings required by the component.\n\n* `selectAllText` (string) - Specifies the text to be displayed next to the checkbox that selects or deselects all options.\n* `tokenLimitShowFewer` (string) - Specifies the text to be displayed in the \"Show fewer\" button for the token group control.\n* `tokenLimitShowMore` (string) - Specifies the text to be displayed in the \"Show more\" button for the token group control. This string should not contain the number of hidden tokens\nbecause this will be added by the component automatically.",
+    "required": false
+  },
+  {
+    "name": "autoFocus",
+    "type": "boolean",
+    "description": "Automatically focuses the trigger when component is mounted.",
+    "required": false
+  },
+  {
+    "name": "tokenLimitShowFewerAriaLabel",
+    "type": "string",
+    "description": "Adds an aria-label to the \"Show fewer\" button for the token group control.\nUse to assign unique labels when there are multiple token groups with the same `tokenLimitShowFewer` label on one page.",
+    "required": false
+  },
+  {
+    "name": "tokenLimitShowMoreAriaLabel",
+    "type": "string",
+    "description": "Adds an aria-label to the \"Show more\" button for the token group control.\nUse to assign unique labels when there are multiple token groups with the same `tokenLimitShowMore` label on one page.",
+    "required": false
+  },
+  {
+    "name": "enableSelectAll",
+    "type": "boolean",
+    "description": "Enables users to select and deselect all options with a special extra checkbox which is displayed at the start of the dropdown.",
+    "required": false
+  },
+  {
+    "name": "renderOption",
+    "type": "MultiselectProps.MultiselectOptionItemRenderer",
+    "description": "Specifies a render function to render custom options in the dropdown menu.",
+    "required": false
+  }
+]

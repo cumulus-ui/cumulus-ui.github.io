@@ -1,0 +1,8 @@
+[
+  {
+    "name": "items",
+    "type": "ReadonlyArray<InternalItemOrGroup>",
+    "description": "",
+    "required": true
+  }
+]

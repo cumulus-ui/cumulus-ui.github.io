@@ -1,0 +1,8 @@
+[
+  {
+    "name": "className",
+    "type": "string",
+    "description": "Additional CSS class for the tooltip container.",
+    "required": false
+  }
+]

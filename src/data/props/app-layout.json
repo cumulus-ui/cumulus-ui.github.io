@@ -1,0 +1,8 @@
+[
+  {
+    "name": "disableBodyScroll",
+    "type": "boolean",
+    "description": "Activates a backwards-compatibility mode for applications with non-fixed headers and footers.",
+    "required": false
+  }
+]

@@ -1,0 +1,20 @@
+[
+  {
+    "name": "format",
+    "type": "TimeInputProps.Format",
+    "description": "Specifies the format of the time input.\n\nUse it to restrict the granularity of time that the user can enter.",
+    "required": false
+  },
+  {
+    "name": "use24Hour",
+    "type": "boolean",
+    "description": "Specifies whether the component should use 12-hour or 24-hour format.\nWhen using 12-hour format, there is no option for picking AM or PM.",
+    "required": false
+  },
+  {
+    "name": "autoComplete",
+    "type": "boolean",
+    "description": "Specifies whether to enable a browser's autocomplete functionality for this input.\nIn some cases it might be appropriate to disable autocomplete (for\nexample, for security-sensitive fields). To use it correctly, set the `name` property.",
+    "required": false
+  }
+]

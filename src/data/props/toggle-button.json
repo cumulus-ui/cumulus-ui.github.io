@@ -1,0 +1,38 @@
+[
+  {
+    "name": "variant",
+    "type": "ToggleButtonProps.Variant",
+    "description": "Determines the general styling of the toggle button as follows:\n* `normal` for secondary buttons.\n* `icon` to display an icon only (no text).\n\nDefaults to `normal` if not specified.",
+    "required": false
+  },
+  {
+    "name": "iconName",
+    "type": "IconProps.Name",
+    "description": "Displays an icon next to the text.",
+    "required": false
+  },
+  {
+    "name": "pressedIconName",
+    "type": "IconProps.Name",
+    "description": "Displays an icon next to the text in pressed state.",
+    "required": false
+  },
+  {
+    "name": "pressedIconUrl",
+    "type": "string",
+    "description": "Specifies the URL of a custom icon in pressed state. Use this property if the icon needed for your use case isn't available.\n\n`pressedIconSvg` will take precedence if you set both `pressedIconUrl` and `pressedIconSvg`.",
+    "required": false
+  },
+  {
+    "name": "pressed",
+    "type": "boolean",
+    "description": "Sets the toggle button to pressed state.",
+    "required": true
+  },
+  {
+    "name": "disabledReason",
+    "type": "string",
+    "description": "Provides a reason why the button is disabled (only when `disabled` is `true`).\nIf provided, the button becomes focusable.\nApplicable only for the normal variant.",
+    "required": false
+  }
+]

@@ -1,0 +1,44 @@
+[
+  {
+    "name": "baseProps",
+    "type": "BaseComponentProps",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "isOpen",
+    "type": "boolean",
+    "description": "",
+    "required": false
+  },
+  {
+    "name": "splitPanelRef",
+    "type": "unknown",
+    "description": "",
+    "required": false
+  },
+  {
+    "name": "cappedSize",
+    "type": "number",
+    "description": "",
+    "required": true
+  },
+  {
+    "name": "panelHeaderId",
+    "type": "string",
+    "description": "",
+    "required": false
+  },
+  {
+    "name": "ariaLabel",
+    "type": "string",
+    "description": "",
+    "required": false
+  },
+  {
+    "name": "onToggle",
+    "type": "() => void",
+    "description": "",
+    "required": true
+  }
+]

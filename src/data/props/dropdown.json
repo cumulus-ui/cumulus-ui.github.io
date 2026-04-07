@@ -1,0 +1,44 @@
+[
+  {
+    "name": "open",
+    "type": "boolean",
+    "description": "Open state of the dropdown.",
+    "required": false
+  },
+  {
+    "name": "minWidth",
+    "type": "number",
+    "description": "Minimum width for the dropdown in pixels. If no value is specified, the\ndropdown will shrink to fit its content.",
+    "required": false
+  },
+  {
+    "name": "maxWidth",
+    "type": "number",
+    "description": "Maximum width for the dropdown in pixels. If no value is specified, the\ndropdown will expand to fit its content.",
+    "required": false
+  },
+  {
+    "name": "ariaRole",
+    "type": "string",
+    "description": "Adds `role` to the dropdown content element.",
+    "required": false
+  },
+  {
+    "name": "ariaLabel",
+    "type": "string",
+    "description": "Adds `aria-label` to the dropdown content element.",
+    "required": false
+  },
+  {
+    "name": "ariaLabelledby",
+    "type": "string",
+    "description": "Adds `aria-labelledby` to the dropdown content element.",
+    "required": false
+  },
+  {
+    "name": "ariaDescribedby",
+    "type": "string",
+    "description": "Adds `aria-describedby` to the dropdown content element.",
+    "required": false
+  }
+]

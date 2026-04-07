@@ -1,0 +1,20 @@
+[
+  {
+    "name": "errorIconAriaLabel",
+    "type": "string",
+    "description": "Provides a text alternative for the error icon in the error alert.",
+    "required": false
+  },
+  {
+    "name": "variant",
+    "type": "'full-page' | 'embedded'",
+    "description": "Specify a form variant with one of the following:\n* `full-page` - Use this variant when the form contains the entire content of the page.\n* `embedded` - Use this variant when the form doesn't occupy the full page.",
+    "required": false
+  },
+  {
+    "name": "analyticsMetadata",
+    "type": "FormProps.AnalyticsMetadata",
+    "description": "Specifies additional analytics-related metadata.\n* `instanceIdentifier` - A unique string that identifies this component instance in your application.\n* `flowType` - Identifies the type of flow represented by the component.\n* `resourceType` - Identifies the type of resource represented by the flow. **Note:** This API is currently experimental.\n* `errorContext` - Identifies the error category and sub-category.",
+    "required": false
+  }
+]

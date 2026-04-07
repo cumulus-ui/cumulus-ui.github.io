@@ -1,0 +1,14 @@
+[
+  {
+    "name": "variant",
+    "type": "HeaderProps.Variant",
+    "description": "Specifies the variant of the header:\n* `h1` - Use this for page level headers.\n* `h2` - Use this for container level headers.\n* `h3` - Use this for section level headers.\n* `awsui-h1-sticky` - Use this for sticky headers in cards and tables.",
+    "required": false
+  },
+  {
+    "name": "headingTagOverride",
+    "type": "HeaderProps.HeadingTag",
+    "description": "Overrides the default [HTML heading tag](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Heading_Elements)\nprovided by the variant. Using this property does not change the visual appearance of the component.",
+    "required": false
+  }
+]

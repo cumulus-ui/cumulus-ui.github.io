@@ -1,0 +1,20 @@
+[
+  {
+    "name": "direction",
+    "type": "SpaceBetweenProps.Direction",
+    "description": "Defines the direction in which the content is laid out.",
+    "required": false
+  },
+  {
+    "name": "size",
+    "type": "SpaceBetweenProps.Size",
+    "description": "Defines the spacing between the individual items of the content.",
+    "required": true
+  },
+  {
+    "name": "alignItems",
+    "type": "SpaceBetweenProps.AlignItems",
+    "description": "Determines how the child elements will be aligned based on the [align-items](https://developer.mozilla.org/en-US/docs/Web/CSS/align-items) property of the CSS Flexbox.",
+    "required": false
+  }
+]
