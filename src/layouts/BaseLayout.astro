@@ -1,0 +1,28 @@
+---
+import '@cumulus-ui/styles/styles.css';
+
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} — Cumulus UI</title>
+    <script is:inline>
+      const theme = localStorage.getItem('theme') ??
+        (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      if (theme === 'dark') document.documentElement.classList.add('awsui-dark-mode');
+    </script>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  body { font-family: 'Open Sans', 'Helvetica Neue', Roboto, Arial, sans-serif; }
+</style>
