@@ -3,7 +3,8 @@
     "name": "variant",
     "type": "BoxProps.Variant",
     "description": "Defines the style of element to display.\n\n- If you set it to `'div'`, `'span'`, `'h1'`, `'h2'`, `'h3'`, `'h4'`, `'h5'`, `'p'`, `'strong'`, `'small'`, `'code'`, `'pre'`, or `'samp'`, the variant is also used as the HTML tag name.\n- If you set it to `awsui-key-label`, the component will render a `div`,\n  styled for use as a key label in key-value pairs.\n- If you set it to `awsui-gen-ai-label`, the component will render a `div`,\n  styled for use as a label indicating that content is produced by generative AI.\n- If you set it to `awsui-value-large`, the component will render a `span`,\n  styled using \"Display large light\" typography.\n- If you set it to `awsui-inline-code`, the component will render a `code` element,\n  styled with a background and padding for inline code snippets.\n\nOverride the HTML tag by using property `tagOverride`.",
-    "required": false
+    "required": false,
+    "defaultValue": "'div'"
   },
   {
     "name": "tagOverride",

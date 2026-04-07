@@ -3,13 +3,15 @@
     "name": "direction",
     "type": "SpaceBetweenProps.Direction",
     "description": "Defines the direction in which the content is laid out.",
-    "required": false
+    "required": false,
+    "defaultValue": "'vertical'"
   },
   {
     "name": "size",
     "type": "SpaceBetweenProps.Size",
     "description": "Defines the spacing between the individual items of the content.",
-    "required": true
+    "required": true,
+    "defaultValue": "'s'"
   },
   {
     "name": "alignItems",

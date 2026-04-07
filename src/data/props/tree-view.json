@@ -3,25 +3,29 @@
     "name": "items",
     "type": "ReadonlyArray<T>",
     "description": "Specifies the top-level items to display in the tree view. Use `getItemChildren` to provide nested items.",
-    "required": true
+    "required": true,
+    "defaultValue": "[]"
   },
   {
     "name": "renderItem",
     "type": "(item: T, index: number) => TreeViewProps.TreeItem",
     "description": "Use this property to map your data to tree view items. This property must return an object with the following properties:\n* `content` (unknown) - The content of the item.\n* `icon` (unknown) - (Optional) The icon of the item.\n* `secondaryContent` (unknown) - (Optional) Secondary content of the item, such as a description of the item.\n* `actions` (unknown) - (Optional) Actions related to the item. Use [button](/components/button/?tabId=playground&example=inline-icon-button) with inline-icon or inline-link variants. For items with multiple actions, use [button dropdown](/components/button-dropdown/?tabId=playground&example=inline-icon-button-dropdown) with the inline-icon variant.\n* `announcementLabel` (string) - (Optional) An announcement label for the item, used for labeling the toggle button. By default, the `content` is used. Make sure to provide the `announcementLabel` if `content` is not a string.",
-    "required": true
+    "required": true,
+    "defaultValue": "> TreeViewProps.TreeItem) | undefined"
   },
   {
     "name": "getItemId",
     "type": "(item: T, index: number) => string",
     "description": "Provides a unique identifier for each tree view item.",
-    "required": true
+    "required": true,
+    "defaultValue": "> string) | undefined"
   },
   {
     "name": "getItemChildren",
     "type": "(item: T, index: number) => ReadonlyArray<T> | undefined",
     "description": "Specifies the nested items that are displayed when a tree view item gets expanded.",
-    "required": true
+    "required": true,
+    "defaultValue": "> ReadonlyArray<T> | undefined) | undefined"
   },
   {
     "name": "expandedItems",

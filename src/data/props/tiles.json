@@ -9,13 +9,15 @@
     "name": "value",
     "type": "string | null",
     "description": "Specifies the value of the selected tile.\nIf you want to clear the selection, use `null`.",
-    "required": true
+    "required": true,
+    "defaultValue": "''"
   },
   {
     "name": "items",
     "type": "ReadonlyArray<TilesProps.TilesDefinition>",
     "description": "List of tile definitions. Each tile has the following properties:\n\n- `value` [string] - The value that will be associated with the tile. This is the value the tiles will get when the radio button is selected.\n- `label` [unknown] - A short description for the option the tile represents.\n- `description` [unknown] - (Optional) Further explanatory guidance on the tile option, shown below the `label`.\n- `image` [unknown] - (Optional) Visually distinctive image for the tile option, shown below the `description`.\n- `disabled` [boolean] - (Optional) Specifies whether the tile is disabled. Users can't select disabled tiles.\n- `controlId` [string] - (Optional) The ID of the internal input. You can use this to relate a label element's `for` attribute to this control.\n           We recommend that you don't set this property because it's automatically set by the tiles component.",
-    "required": false
+    "required": false,
+    "defaultValue": "[]"
   },
   {
     "name": "ariaLabel",
@@ -45,6 +47,7 @@
     "name": "readOnly",
     "type": "boolean",
     "description": "Specifies if the control is read-only, which prevents the\nuser from modifying the value, but does not prevent the value from\nbeing included in a form submission. A read-only control is still focusable.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   }
 ]

@@ -9,6 +9,7 @@
     "name": "disableGutters",
     "type": "boolean",
     "description": "Determines whether horizontal and vertical gutters are hidden.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   }
 ]

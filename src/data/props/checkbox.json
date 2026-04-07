@@ -3,7 +3,8 @@
     "name": "indeterminate",
     "type": "boolean",
     "description": "Specifies that the component is in an indeterminate state. The behavior of this property replicates\nthe behavior of [the respective property](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/checkbox#Indeterminate_state_checkboxes)\nin the native control.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   },
   {
     "name": "ariaRequired",

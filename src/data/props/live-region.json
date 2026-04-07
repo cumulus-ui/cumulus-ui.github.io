@@ -3,7 +3,8 @@
     "name": "assertive",
     "type": "boolean",
     "description": "Whether the announcements should be made using assertive aria-live.\nAssertive announcements interrupt the user's action, so they should only\nbe used when absolutely necessary.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   },
   {
     "name": "tagName",
@@ -15,6 +16,7 @@
     "name": "hidden",
     "type": "boolean",
     "description": "Determines whether to visually hide the contents of the `children` slot.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   }
 ]

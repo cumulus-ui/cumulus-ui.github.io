@@ -29,6 +29,22 @@ interface PropInfo {
   defaultValue?: string;
 }
 
+function extractDefaults(componentName: string): Map<string, string> {
+  const filePath = resolve(COMPONENTS_SRC, componentName, 'internal.ts');
+  const defaults = new Map<string, string>();
+  if (!existsSync(filePath)) return defaults;
+
+  const source = readFileSync(filePath, 'utf-8');
+  // Match lines after @property: `propName: Type = value;` or `propName = value;`
+  const pattern = /^\s+(?:override\s+)?(\w+)(?::\s*[^=]+)?\s*=\s*(.+);/gm;
+  let match: RegExpExecArray | null;
+  while ((match = pattern.exec(source)) !== null) {
+    const [, name, rawValue] = match;
+    defaults.set(name, rawValue.trim());
+  }
+  return defaults;
+}
+
 function extractProps(componentName: string): PropInfo[] {
   const filePath = resolve(COMPONENTS_SRC, componentName, 'interfaces.ts');
   if (!existsSync(filePath)) {
@@ -39,6 +55,7 @@ function extractProps(componentName: string): PropInfo[] {
   const source = readFileSync(filePath, 'utf-8');
   const sourceFile = ts.createSourceFile(filePath, source, ts.ScriptTarget.Latest, true);
   const props: PropInfo[] = [];
+  const defaults = extractDefaults(componentName);
 
   // Find the main *Props interface (e.g. BadgeProps, CheckboxProps)
   const suffix = 'Props';
@@ -85,7 +102,10 @@ function extractProps(componentName: string): PropInfo[] {
     // Skip @slot and @event markers (JSDoc-only documentation, not real props)
     if (description.startsWith('@slot') || description.startsWith('@event')) continue;
 
-    props.push({ name, type, description: description.trim(), required });
+    const prop: PropInfo = { name, type, description: description.trim(), required };
+    const defaultValue = defaults.get(name);
+    if (defaultValue !== undefined) prop.defaultValue = defaultValue;
+    props.push(prop);
   }
 
   return props;

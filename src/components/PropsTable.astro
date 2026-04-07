@@ -10,6 +10,7 @@ let props: Array<{
   type: string;
   description: string;
   required: boolean;
+  defaultValue?: string;
 }> = [];
 
 try {
@@ -35,7 +36,7 @@ try {
         <tr>
           <td><code>{prop.name}</code></td>
           <td><code>{prop.type}</code></td>
-          <td>{prop.required ? <em>required</em> : <code>—</code>}</td>
+          <td>{prop.required ? <em>required</em> : prop.defaultValue ? <code>{prop.defaultValue}</code> : <code>—</code>}</td>
           <td>{prop.description}</td>
         </tr>
       ))}

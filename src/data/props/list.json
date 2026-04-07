@@ -3,13 +3,15 @@
     "name": "items",
     "type": "ReadonlyArray<T>",
     "description": "The items to display in the list.",
-    "required": true
+    "required": true,
+    "defaultValue": "[]"
   },
   {
     "name": "renderItem",
     "type": "(item: T) => {\n    id: string;\n    content: unknown;\n    secondaryContent?: unknown;\n    icon?: unknown;\n    actions?: unknown;\n    announcementLabel?: string;\n  }",
     "description": "Render an item. The function should return an object with the following keys:\n* `id` (string) - A unique identifier for the item.\n* `content` (unknown) - The content of the item.\n* `secondaryContent` (unknown) - (Optional) Secondary content, for example item description.\n* `icon` (unknown) - (Optional) An icon, displayed at the start.\n* `actions` (unknown) - (Optional) Action button(s).\n* `announcementLabel` (string) - (Optional) An announcement label for the item, used when sorting.\n   By default, the `content` is used: a custom label should be provided if `content` is not a string.",
-    "required": true
+    "required": true,
+    "defaultValue": "> RenderedItem) | undefined"
   },
   {
     "name": "tagOverride",
@@ -39,25 +41,29 @@
     "name": "sortable",
     "type": "boolean",
     "description": "Makes the list sortable by enabling drag and drop functionality.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   },
   {
     "name": "sortDisabled",
     "type": "boolean",
     "description": "Disables sorting drag handles. Use this to temporarily prevent users from reordering the list.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   },
   {
     "name": "disableItemPaddings",
     "type": "boolean",
     "description": "Removes padding around and inside list items.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   },
   {
     "name": "disablePaddings",
     "type": "boolean",
     "description": "Removes top and bottom padding around the list. Does not apply for sortable lists.",
-    "required": false
+    "required": false,
+    "defaultValue": "false"
   },
   {
     "name": "i18nStrings",

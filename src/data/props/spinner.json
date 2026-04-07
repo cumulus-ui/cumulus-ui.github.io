@@ -3,12 +3,14 @@
     "name": "size",
     "type": "SpinnerProps.Size",
     "description": "Specifies the size of the spinner.",
-    "required": false
+    "required": false,
+    "defaultValue": "'normal'"
   },
   {
     "name": "variant",
     "type": "SpinnerProps.Variant",
     "description": "Specifies the color variant of the spinner. The `normal` variant picks up the current color of its context.",
-    "required": false
+    "required": false,
+    "defaultValue": "'normal'"
   }
 ]
