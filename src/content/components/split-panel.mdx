@@ -1,0 +1,33 @@
+---
+title: Split panel
+description: A resizable panel displayed at the bottom or side of the page.
+tag: cs-split-panel
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-split-panel header="Details" position="bottom">
+    Split panel content goes here.
+  </cs-split-panel>
+</ComponentPreview>
+
+## Usage
+
+```html
+<!-- Bottom position (default) -->
+<cs-split-panel header="Details" position="bottom">
+  <p>Panel content displayed below the main content.</p>
+</cs-split-panel>
+
+<!-- Side position -->
+<cs-split-panel header="Preview" position="side">
+  <p>Panel content displayed beside the main content.</p>
+</cs-split-panel>
+```
+
+## Properties
+
+<PropsTable component="split-panel" />

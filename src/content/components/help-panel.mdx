@@ -1,0 +1,33 @@
+---
+title: Help panel
+description: A panel for displaying contextual help content alongside the main page.
+tag: cs-help-panel
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-help-panel header="Help">
+    <p>This section explains how to configure your resource settings.</p>
+    <cs-link href="https://example.com" external>Learn more</cs-link>
+  </cs-help-panel>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-help-panel header="Help">
+  <p>Contextual help content for the current page.</p>
+  <h3>Related topics</h3>
+  <ul>
+    <li><cs-link href="/docs/topic-a">Topic A</cs-link></li>
+    <li><cs-link href="/docs/topic-b">Topic B</cs-link></li>
+  </ul>
+</cs-help-panel>
+```
+
+## Properties
+
+<PropsTable component="help-panel" />

@@ -1,0 +1,32 @@
+---
+title: Item card
+description: Displays a single piece of content in a structured, visual card format.
+tag: cs-item-card
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-item-card>
+    <div slot="header">Instance A</div>
+    <div slot="description">t3.micro · us-east-1</div>
+    Card body content
+  </cs-item-card>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-item-card>
+  <div slot="header">Resource name</div>
+  <div slot="description">Resource description</div>
+  <div slot="footer">Footer content</div>
+  Main body content
+</cs-item-card>
+```
+
+## Properties
+
+<PropsTable component="item-card" />

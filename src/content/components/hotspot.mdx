@@ -1,0 +1,36 @@
+---
+title: Hotspot
+description: A pulsing indicator that highlights interactive elements during tutorial steps.
+tag: cs-hotspot
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <div style="position: relative; padding: 24px;">
+    Click here <cs-hotspot></cs-hotspot>
+  </div>
+</ComponentPreview>
+
+## Usage
+
+```html
+<!-- Place next to the element you want to highlight -->
+<cs-button>
+  Create resource <cs-hotspot></cs-hotspot>
+</cs-button>
+
+<!-- Use within annotation-context for tutorial flows -->
+<cs-annotation-context>
+  <cs-form-field label="Name">
+    <cs-input></cs-input>
+    <cs-hotspot></cs-hotspot>
+  </cs-form-field>
+</cs-annotation-context>
+```
+
+## Properties
+
+<PropsTable component="hotspot" />

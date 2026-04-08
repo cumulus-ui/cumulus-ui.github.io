@@ -1,0 +1,41 @@
+---
+title: Tutorial panel
+description: A panel that displays a list of available tutorials and tracks completion progress.
+tag: cs-tutorial-panel
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-tutorial-panel></cs-tutorial-panel>
+</ComponentPreview>
+
+> **Note:** Tutorials are configured via JavaScript properties. See usage below.
+
+## Usage
+
+```html
+<cs-tutorial-panel></cs-tutorial-panel>
+
+<script>
+  const panel = document.querySelector('cs-tutorial-panel');
+  panel.tutorials = [
+    {
+      title: 'Create your first resource',
+      description: 'Learn how to create and configure a resource.',
+      completed: false,
+    },
+    {
+      title: 'Set up monitoring',
+      description: 'Configure alarms and dashboards.',
+      completed: true,
+    },
+  ];
+</script>
+```
+
+## Properties
+
+<PropsTable component="tutorial-panel" />

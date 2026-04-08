@@ -1,0 +1,46 @@
+---
+title: Top navigation
+description: A horizontal navigation bar with identity, search, and utility actions.
+tag: cs-top-navigation
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-top-navigation></cs-top-navigation>
+</ComponentPreview>
+
+> **Note:** The `identity` and `utilities` properties are set via JavaScript. See usage below.
+
+## Usage
+
+```html
+<cs-top-navigation></cs-top-navigation>
+
+<script>
+  const nav = document.querySelector('cs-top-navigation');
+  nav.identity = {
+    href: '/',
+    title: 'My Application',
+  };
+  nav.utilities = [
+    { type: 'button', iconName: 'notification', ariaLabel: 'Notifications' },
+    { type: 'button', iconName: 'settings', ariaLabel: 'Settings' },
+    {
+      type: 'menu-dropdown',
+      text: 'User',
+      iconName: 'user-profile',
+      items: [
+        { id: 'profile', text: 'Profile' },
+        { id: 'signout', text: 'Sign out' },
+      ],
+    },
+  ];
+</script>
+```
+
+## Properties
+
+<PropsTable component="top-navigation" />

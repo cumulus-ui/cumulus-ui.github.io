@@ -1,0 +1,44 @@
+---
+title: Wizard
+description: A multi-step form flow that guides users through a sequential process.
+tag: cs-wizard
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-wizard></cs-wizard>
+</ComponentPreview>
+
+> **Note:** The `steps` property is set via JavaScript. See usage below.
+
+## Usage
+
+```html
+<cs-wizard></cs-wizard>
+
+<script>
+  const wizard = document.querySelector('cs-wizard');
+  wizard.steps = [
+    {
+      title: 'Choose engine',
+      description: 'Select a database engine.',
+      content: '<cs-container>Step 1 content</cs-container>',
+    },
+    {
+      title: 'Configure settings',
+      content: '<cs-container>Step 2 content</cs-container>',
+    },
+    {
+      title: 'Review and create',
+      content: '<cs-container>Step 3 content</cs-container>',
+    },
+  ];
+</script>
+```
+
+## Properties
+
+<PropsTable component="wizard" />

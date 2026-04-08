@@ -1,0 +1,43 @@
+---
+title: Side navigation
+description: A vertical navigation tree for application sections and pages.
+tag: cs-side-navigation
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-side-navigation></cs-side-navigation>
+</ComponentPreview>
+
+> **Note:** The `items` property is set via JavaScript. See usage below.
+
+## Usage
+
+```html
+<cs-side-navigation header="Navigation"></cs-side-navigation>
+
+<script>
+  const nav = document.querySelector('cs-side-navigation');
+  nav.items = [
+    { type: 'link', text: 'Dashboard', href: '/dashboard' },
+    { type: 'link', text: 'Instances', href: '/instances' },
+    {
+      type: 'section',
+      text: 'Storage',
+      items: [
+        { type: 'link', text: 'Buckets', href: '/buckets' },
+        { type: 'link', text: 'Volumes', href: '/volumes' },
+      ],
+    },
+    { type: 'divider' },
+    { type: 'link', text: 'Settings', href: '/settings' },
+  ];
+</script>
+```
+
+## Properties
+
+<PropsTable component="side-navigation" />

@@ -1,0 +1,31 @@
+---
+title: File token group
+description: A collection of uploaded files displayed as dismissible tokens.
+tag: cs-file-token-group
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-file-token-group alignment="horizontal"></cs-file-token-group>
+</ComponentPreview>
+
+## Usage
+
+```js
+const group = document.querySelector('cs-file-token-group');
+group.items = [
+  { file: new File([''], 'report.pdf', { type: 'application/pdf' }) },
+  { file: new File([''], 'photo.jpg', { type: 'image/jpeg' }) },
+];
+group.addEventListener('dismiss', e => {
+  const { fileIndex } = e.detail;
+  group.items = group.items.filter((_, i) => i !== fileIndex);
+});
+```
+
+## Properties
+
+<PropsTable component="file-token-group" />

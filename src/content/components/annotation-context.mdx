@@ -1,0 +1,37 @@
+---
+title: Annotation context
+description: A context provider that enables tutorial annotations on child components.
+tag: cs-annotation-context
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-annotation-context>
+    <cs-container header="Annotated section">
+      Content with tutorial annotations enabled.
+    </cs-container>
+  </cs-annotation-context>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-annotation-context>
+  <!-- Child components can display tutorial annotations -->
+  <cs-app-layout>
+    <div slot="content">
+      <cs-container header="Getting started">
+        <cs-hotspot></cs-hotspot>
+        Annotated content here.
+      </cs-container>
+    </div>
+  </cs-app-layout>
+</cs-annotation-context>
+```
+
+## Properties
+
+<PropsTable component="annotation-context" />

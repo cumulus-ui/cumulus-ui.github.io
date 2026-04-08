@@ -1,0 +1,33 @@
+---
+title: Code editor
+description: A code editing area with syntax highlighting and language support.
+tag: cs-code-editor
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-code-editor language="javascript" value="console.log('Hello, world!');"></cs-code-editor>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-code-editor
+  language="javascript"
+  value="function greet(name) { return `Hello, ${name}!`; }"
+></cs-code-editor>
+
+<!-- Read-only mode -->
+<cs-code-editor
+  language="json"
+  value='{ "key": "value" }'
+  read-only
+></cs-code-editor>
+```
+
+## Properties
+
+<PropsTable component="code-editor" />

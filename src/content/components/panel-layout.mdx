@@ -1,0 +1,29 @@
+---
+title: Panel layout
+description: A resizable split layout with a main content area and a side panel.
+tag: cs-panel-layout
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-panel-layout panel-position="right" resizable>
+    <div slot="main">Main content area</div>
+    <div slot="panel">Panel content</div>
+  </cs-panel-layout>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-panel-layout panel-position="right" resizable default-panel-size="300">
+  <div slot="main">Main content</div>
+  <div slot="panel">Side panel</div>
+</cs-panel-layout>
+```
+
+## Properties
+
+<PropsTable component="panel-layout" />

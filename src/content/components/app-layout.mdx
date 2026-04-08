@@ -1,0 +1,42 @@
+---
+title: App layout
+description: A page layout shell with navigation, tools panel, and content slots.
+tag: cs-app-layout
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-app-layout content-type="default">
+    <div slot="navigation">Navigation</div>
+    <div slot="content">
+      <cs-container header="Main content">
+        Page content goes here.
+      </cs-container>
+    </div>
+    <div slot="tools">Tools panel</div>
+  </cs-app-layout>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-app-layout content-type="default" navigation-open tools-open>
+  <cs-side-navigation slot="navigation"></cs-side-navigation>
+  <div slot="content">
+    <cs-content-layout>
+      <cs-header slot="header" variant="h1">Page title</cs-header>
+      <cs-container header="Section">Content</cs-container>
+    </cs-content-layout>
+  </div>
+  <cs-help-panel slot="tools" header="Help">
+    Contextual help content.
+  </cs-help-panel>
+</cs-app-layout>
+```
+
+## Properties
+
+<PropsTable component="app-layout" />

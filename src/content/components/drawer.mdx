@@ -1,0 +1,31 @@
+---
+title: Drawer
+description: A panel with header and content, used inside app-layout for tools and split views.
+tag: cs-drawer
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-drawer header="Drawer title">
+    Drawer content goes here.
+  </cs-drawer>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-drawer header="Resource details">
+  <cs-space-between size="l" direction="vertical">
+    <cs-key-value-pairs columns="2">
+      <!-- key-value content -->
+    </cs-key-value-pairs>
+  </cs-space-between>
+</cs-drawer>
+```
+
+## Properties
+
+<PropsTable component="drawer" />

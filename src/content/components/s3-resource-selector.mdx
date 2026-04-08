@@ -1,0 +1,31 @@
+---
+title: S3 resource selector
+description: An S3 path input with a browse modal for selecting buckets, prefixes, and objects.
+tag: cs-s3-resource-selector
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-s3-resource-selector></cs-s3-resource-selector>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-s3-resource-selector></cs-s3-resource-selector>
+
+<script>
+  const selector = document.querySelector('cs-s3-resource-selector');
+  selector.resource = { uri: 's3://my-bucket/path/to/object' };
+  selector.addEventListener('change', (event) => {
+    console.log('Selected resource:', event.detail.resource);
+  });
+</script>
+```
+
+## Properties
+
+<PropsTable component="s3-resource-selector" />
