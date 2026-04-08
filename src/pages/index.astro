@@ -16,10 +16,13 @@ const components = (await getCollection('components')).sort((a, b) => a.data.tit
       </div>
       <div class="tiles-grid">
         {components.map(comp => (
-          <a href={`/components/${comp.id}`} class="tile">
-            <cs-box font-size="body-s" color="text-status-inactive"><code>&lt;{comp.data.tag}&gt;</code></cs-box>
-            <cs-box font-size="heading-s" font-weight="bold" color="text-heading-default">{comp.data.title}</cs-box>
-            <cs-box font-size="body-s" color="text-body-secondary">{comp.data.description}</cs-box>
+          <a href={`/components/${comp.id}`} class="tile-link">
+            <cs-container fit-height>
+              <cs-header slot="header" description={`<${comp.data.tag}${'>'}`}>
+                {comp.data.title}
+              </cs-header>
+              <cs-box font-size="body-s" color="text-body-secondary">{comp.data.description}</cs-box>
+            </cs-container>
           </a>
         ))}
       </div>
@@ -33,15 +36,8 @@ const components = (await getCollection('components')).sort((a, b) => a.data.tit
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
   }
-  .tile {
-    display: block;
-    padding: 16px;
-    border: var(--border-divider-section-width-4wm2it, 1px) solid var(--color-border-divider-default-7s2wjw, #e9ebed);
-    border-radius: var(--border-radius-container-qk5ft4, 16px);
+  .tile-link {
+    display: grid;
     text-decoration: none;
-    background: var(--color-background-container-content-z79u4u, #fff);
-  }
-  .tile:hover {
-    border-color: var(--color-text-link-default-enwvrt, #006ce0);
   }
 </style>

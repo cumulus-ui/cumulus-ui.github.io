@@ -119,11 +119,11 @@ const renderedEvents = await Promise.all(
 
   .props-entry {
     padding: 16px 0;
-    border-bottom: 1px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
+    border-bottom: 1px solid var(--color-border-divider-default, #e9ebed);
   }
 
   .props-entry:first-child {
-    border-top: 1px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
+    border-top: 1px solid var(--color-border-divider-default, #e9ebed);
   }
 
   .props-header {
@@ -139,7 +139,7 @@ const renderedEvents = await Promise.all(
     font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
     font-size: 15px;
     font-weight: 700;
-    color: var(--color-text-column-header-p3mvlz, #414d5c);
+    color: var(--color-text-heading-default, #0f141a);
     background: none;
     padding: 0;
   }
@@ -157,8 +157,8 @@ const renderedEvents = await Promise.all(
   .props-type code {
     font-family: "SFMono-Regular", "Menlo", "Monaco", "Consolas", monospace;
     font-size: 13px;
-    color: var(--color-text-column-header-p3mvlz, #5f6b7a);
-    background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);
+    color: var(--color-text-body-secondary, #5f6b7a);
+    background: var(--color-background-code-editor-gutter-default, #f2f3f3);
     padding: 2px 8px;
     border-radius: 4px;
     word-break: break-word;
@@ -175,8 +175,8 @@ const renderedEvents = await Promise.all(
   }
 
   .props-badge--required {
-    background: #fdf3f1;
-    color: #d91515;
+    background: var(--color-background-status-error, #fdf3f1);
+    color: var(--color-text-status-error, #d91515);
   }
 
   .props-badge--default code {
@@ -187,15 +187,15 @@ const renderedEvents = await Promise.all(
   }
 
   .props-badge--default {
-    background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);
-    color: var(--color-text-column-header-p3mvlz, #5f6b7a);
+    background: var(--color-background-code-editor-gutter-default, #f2f3f3);
+    color: var(--color-text-body-secondary, #5f6b7a);
   }
 
   .props-description {
     margin: 8px 0 0;
     padding: 0;
     line-height: 1.6;
-    color: var(--color-text-column-header-p3mvlz, #414d5c);
+    color: var(--color-text-body-default, #0f141a);
   }
 
   .props-description :global(p) {
@@ -221,14 +221,14 @@ const renderedEvents = await Promise.all(
     font-size: 13px;
     padding: 2px 6px;
     border-radius: 4px;
-    background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);
+    background: var(--color-background-code-editor-gutter-default, #f2f3f3);
   }
 
   .props-description :global(pre) {
     margin: 0.5em 0;
     padding: 12px 16px;
     border-radius: 6px;
-    background: var(--color-background-code-editor-gutter-default-l9we2o, #f2f3f3);
+    background: var(--color-background-code-editor-gutter-default, #f2f3f3);
     overflow-x: auto;
     font-size: 13px;
   }

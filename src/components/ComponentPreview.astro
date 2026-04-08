@@ -5,40 +5,24 @@ interface Props {
 
 const { label } = Astro.props;
 ---
-<div class="component-preview">
-  {label && <span class="component-preview__label">{label}</span>}
+<cs-container>
+  {label && <cs-header slot="header" variant="h3">{label}</cs-header>}
   <div class="component-preview__canvas">
     <slot />
   </div>
-</div>
+</cs-container>
 
 <style>
-  .component-preview {
-    border: 1px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
-    border-radius: 8px;
+  cs-container {
     margin: 1rem 0;
-    overflow: hidden;
-  }
-
-  .component-preview__label {
-    display: block;
-    padding: 8px 16px;
-    font-size: 12px;
-    font-weight: 700;
-    letter-spacing: 0.5px;
-    text-transform: uppercase;
-    color: var(--color-text-label-gxskdy, #5f6b7a);
-    border-bottom: 1px solid var(--color-border-divider-default-7s2wjw, #e9ebed);
-    background: var(--color-background-layout-main-sfhm4y, #ffffff);
   }
 
   .component-preview__canvas {
-    padding: 24px;
+    padding: 8px;
     display: flex;
     flex-wrap: wrap;
     align-items: center;
     gap: 8px;
-    background: var(--color-background-layout-main-sfhm4y, #ffffff);
   }
 
   .component-preview__canvas > :global(*) {
