@@ -9,8 +9,18 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-flashbar></cs-flashbar>
+  <cs-flashbar id="demo-flashbar"></cs-flashbar>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-flashbar');
+  if (el) {
+    el.items = [
+      { type: 'success', content: 'Instance created successfully.' },
+      { type: 'info', content: 'A new software update is available.' },
+    ];
+  }
+`}</script>
 
 > **Note:** The `items` property must be set via JavaScript as it accepts an array of objects.
 

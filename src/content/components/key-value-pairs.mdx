@@ -9,8 +9,19 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Key-value pairs">
-  <cs-key-value-pairs></cs-key-value-pairs>
+  <cs-key-value-pairs id="demo-kvp"></cs-key-value-pairs>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-kvp');
+  if (el) {
+    el.items = [
+      { label: 'Instance ID', value: 'i-0123456789abcdef0' },
+      { label: 'Instance type', value: 't3.medium' },
+      { label: 'Availability zone', value: 'us-east-1a' },
+    ];
+  }
+`}</script>
 
 > **Note:** Items are set via the `items` JavaScript property. See usage below.
 

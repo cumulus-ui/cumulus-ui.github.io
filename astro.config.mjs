@@ -6,4 +6,12 @@ export default defineConfig({
   integrations: [lit(), mdx()],
   site: 'https://cumulus-ui.github.io',
   server: { port: 4321 },
+  markdown: {
+    shikiConfig: {
+      themes: {
+        light: 'github-light',
+        dark: 'github-dark',
+      },
+    },
+  },
 });

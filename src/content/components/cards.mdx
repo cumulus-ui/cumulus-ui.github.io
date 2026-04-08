@@ -9,8 +9,25 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic cards">
-  <cs-cards></cs-cards>
+  <cs-cards id="demo-cards"></cs-cards>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-cards');
+  if (el) {
+    el.cardDefinition = {
+      header: item => item.name,
+      sections: [
+        { id: 'description', header: 'Description', content: item => item.description },
+        { id: 'type', header: 'Type', content: item => item.type },
+      ],
+    };
+    el.items = [
+      { name: 'Instance A', description: 'Web server running in us-east-1', type: 't3.micro' },
+      { name: 'Instance B', description: 'Database server in us-west-2', type: 't3.small' },
+    ];
+  }
+`}</script>
 
 > **Note:** Card items and definition are set via JavaScript properties. See usage below.
 

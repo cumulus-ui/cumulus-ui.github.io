@@ -9,8 +9,19 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic button group">
-  <cs-button-group></cs-button-group>
+  <cs-button-group id="demo-btn-group"></cs-button-group>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-btn-group');
+  if (el) {
+    el.items = [
+      { type: 'icon-button', text: 'Copy', iconName: 'copy', id: 'copy' },
+      { type: 'icon-button', text: 'Edit', iconName: 'edit', id: 'edit' },
+      { type: 'icon-button', text: 'Delete', iconName: 'remove', id: 'delete' },
+    ];
+  }
+`}</script>
 
 > **Note:** Items are set via the `items` JavaScript property. See usage below.
 

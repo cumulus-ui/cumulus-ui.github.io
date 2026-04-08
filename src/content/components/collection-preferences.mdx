@@ -9,8 +9,23 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Preferences trigger">
-  <cs-collection-preferences></cs-collection-preferences>
+  <cs-collection-preferences id="demo-col-prefs" title="Preferences"></cs-collection-preferences>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-col-prefs');
+  if (el) {
+    el.pageSizePreference = {
+      title: 'Page size',
+      options: [
+        { value: 10, label: '10 items' },
+        { value: 25, label: '25 items' },
+        { value: 50, label: '50 items' },
+      ],
+    };
+    el.preferences = { pageSize: 10 };
+  }
+`}</script>
 
 ## Usage
 

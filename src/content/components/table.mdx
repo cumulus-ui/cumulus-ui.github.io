@@ -9,8 +9,24 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic table">
-  <cs-table></cs-table>
+  <cs-table id="demo-table"></cs-table>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-table');
+  if (el) {
+    el.columnDefinitions = [
+      { id: 'name', header: 'Name', cell: item => item.name, sortingField: 'name' },
+      { id: 'type', header: 'Type', cell: item => item.type },
+      { id: 'size', header: 'Size', cell: item => item.size },
+    ];
+    el.items = [
+      { name: 'Instance A', type: 't3.micro', size: 'Small' },
+      { name: 'Instance B', type: 't3.small', size: 'Medium' },
+      { name: 'Instance C', type: 't3.large', size: 'Large' },
+    ];
+  }
+`}</script>
 
 > **Note:** Table data and column definitions are set via JavaScript properties. See usage below.
 

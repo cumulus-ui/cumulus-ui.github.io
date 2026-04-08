@@ -9,8 +9,19 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-date-range-picker placeholder="Filter by date range"></cs-date-range-picker>
+  <cs-date-range-picker id="demo-date-range" placeholder="Filter by date range"></cs-date-range-picker>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-date-range');
+  if (el) {
+    el.relativeOptions = [
+      { key: 'last-hour', amount: 1, unit: 'hour', type: 'relative' },
+      { key: 'last-7', amount: 7, unit: 'day', type: 'relative' },
+      { key: 'last-30', amount: 30, unit: 'day', type: 'relative' },
+    ];
+  }
+`}</script>
 
 ## Usage
 

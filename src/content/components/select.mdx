@@ -9,14 +9,38 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic select">
-  <cs-select placeholder="Choose an option"></cs-select>
+  <cs-select id="demo-select" placeholder="Choose an option"></cs-select>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-select');
+  if (el) {
+    el.options = [
+      { label: 'US East (N. Virginia)', value: 'us-east-1' },
+      { label: 'US West (Oregon)', value: 'us-west-2' },
+      { label: 'Europe (Ireland)', value: 'eu-west-1' },
+    ];
+    el.selectedOption = { label: 'US East (N. Virginia)', value: 'us-east-1' };
+  }
+`}</script>
 
 > **Note:** Options are set via the `options` JavaScript property. See usage below.
 
 <ComponentPreview label="With label context">
-  <cs-select placeholder="Select a region" selected-label="Region"></cs-select>
+  <cs-select id="demo-select-labeled" placeholder="Select a region" selected-label="Region"></cs-select>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-select-labeled');
+  if (el) {
+    el.options = [
+      { label: 'US East (N. Virginia)', value: 'us-east-1' },
+      { label: 'US West (Oregon)', value: 'us-west-2' },
+      { label: 'Europe (Ireland)', value: 'eu-west-1' },
+    ];
+    el.selectedOption = { label: 'US West (Oregon)', value: 'us-west-2' };
+  }
+`}</script>
 
 ## Usage
 

@@ -9,8 +9,18 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-tag-editor></cs-tag-editor>
+  <cs-tag-editor id="demo-tag-editor"></cs-tag-editor>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-tag-editor');
+  if (el) {
+    el.tags = [
+      { key: 'Environment', value: 'Production', existing: true },
+      { key: 'Team', value: 'Frontend', existing: false },
+    ];
+  }
+`}</script>
 
 ## Usage
 

@@ -9,8 +9,19 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic breadcrumbs">
-  <cs-breadcrumb-group></cs-breadcrumb-group>
+  <cs-breadcrumb-group id="demo-breadcrumbs"></cs-breadcrumb-group>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-breadcrumbs');
+  if (el) {
+    el.items = [
+      { text: 'Home', href: '#' },
+      { text: 'Instances', href: '#' },
+      { text: 'i-0123456789', href: '#' },
+    ];
+  }
+`}</script>
 
 > **Note:** Items are set via the `items` JavaScript property. See usage below.
 

@@ -9,8 +9,19 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-wizard></cs-wizard>
+  <cs-wizard id="demo-wizard"></cs-wizard>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-wizard');
+  if (el) {
+    el.steps = [
+      { title: 'Choose engine', description: 'Select a database engine.' },
+      { title: 'Configure settings', description: 'Set up networking and storage.' },
+      { title: 'Review and create', description: 'Verify and launch.' },
+    ];
+  }
+`}</script>
 
 > **Note:** The `steps` property is set via JavaScript. See usage below.
 

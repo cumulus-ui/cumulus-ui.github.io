@@ -9,8 +9,28 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-top-navigation></cs-top-navigation>
+  <cs-top-navigation id="demo-topnav"></cs-top-navigation>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-topnav');
+  if (el) {
+    el.identity = { href: '#', title: 'My Application' };
+    el.utilities = [
+      { type: 'button', iconName: 'notification', ariaLabel: 'Notifications' },
+      { type: 'button', iconName: 'settings', ariaLabel: 'Settings' },
+      {
+        type: 'menu-dropdown',
+        text: 'User',
+        iconName: 'user-profile',
+        items: [
+          { id: 'profile', text: 'Profile' },
+          { id: 'signout', text: 'Sign out' },
+        ],
+      },
+    ];
+  }
+`}</script>
 
 > **Note:** The `identity` and `utilities` properties are set via JavaScript. See usage below.
 

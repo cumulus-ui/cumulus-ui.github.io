@@ -9,8 +9,17 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-file-upload accept=".png,.jpg,.pdf"></cs-file-upload>
+  <cs-file-upload id="demo-file-upload" accept=".png,.jpg,.pdf"></cs-file-upload>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-file-upload');
+  if (el) {
+    el.label = 'Upload files';
+    el.description = 'Accepted formats: PNG, JPG, PDF';
+    el.constraintText = 'Maximum file size: 10 MB';
+  }
+`}</script>
 
 ## Usage
 

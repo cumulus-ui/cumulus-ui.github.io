@@ -9,14 +9,46 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic multiselect">
-  <cs-multiselect placeholder="Choose options"></cs-multiselect>
+  <cs-multiselect id="demo-multiselect" placeholder="Choose options"></cs-multiselect>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-multiselect');
+  if (el) {
+    el.options = [
+      { label: 'US East (N. Virginia)', value: 'us-east-1' },
+      { label: 'US West (Oregon)', value: 'us-west-2' },
+      { label: 'Europe (Ireland)', value: 'eu-west-1' },
+    ];
+    el.selectedOptions = [
+      { label: 'US East (N. Virginia)', value: 'us-east-1' },
+      { label: 'Europe (Ireland)', value: 'eu-west-1' },
+    ];
+  }
+`}</script>
 
 > **Note:** Options are set via the `options` JavaScript property. See usage below.
 
 <ComponentPreview label="With token display">
-  <cs-multiselect placeholder="Select regions" token-limit="2"></cs-multiselect>
+  <cs-multiselect id="demo-multiselect-tokens" placeholder="Select regions" token-limit="2"></cs-multiselect>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-multiselect-tokens');
+  if (el) {
+    el.options = [
+      { label: 'US East (N. Virginia)', value: 'us-east-1' },
+      { label: 'US West (Oregon)', value: 'us-west-2' },
+      { label: 'Europe (Ireland)', value: 'eu-west-1' },
+      { label: 'Asia Pacific (Tokyo)', value: 'ap-northeast-1' },
+    ];
+    el.selectedOptions = [
+      { label: 'US East (N. Virginia)', value: 'us-east-1' },
+      { label: 'US West (Oregon)', value: 'us-west-2' },
+      { label: 'Europe (Ireland)', value: 'eu-west-1' },
+    ];
+  }
+`}</script>
 
 ## Usage
 

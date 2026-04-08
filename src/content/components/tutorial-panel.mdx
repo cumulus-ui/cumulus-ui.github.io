@@ -9,8 +9,26 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-tutorial-panel></cs-tutorial-panel>
+  <cs-tutorial-panel id="demo-tutorial"></cs-tutorial-panel>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-tutorial');
+  if (el) {
+    el.tutorials = [
+      {
+        title: 'Create your first resource',
+        description: 'Learn how to create and configure a resource.',
+        completed: false,
+      },
+      {
+        title: 'Set up monitoring',
+        description: 'Configure alarms and dashboards.',
+        completed: true,
+      },
+    ];
+  }
+`}</script>
 
 > **Note:** Tutorials are configured via JavaScript properties. See usage below.
 

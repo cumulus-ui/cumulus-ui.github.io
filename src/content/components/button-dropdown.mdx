@@ -9,16 +9,39 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic button dropdown">
-  <cs-button-dropdown>Actions</cs-button-dropdown>
+  <cs-button-dropdown id="demo-btn-dropdown">Actions</cs-button-dropdown>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-btn-dropdown');
+  if (el) {
+    el.items = [
+      { text: 'Edit', id: 'edit' },
+      { text: 'Delete', id: 'delete' },
+      { text: 'Duplicate', id: 'duplicate' },
+    ];
+  }
+`}</script>
 
 > **Note:** Menu items are set via the `items` JavaScript property. See usage below.
 
 <ComponentPreview label="Variants">
-  <cs-button-dropdown variant="primary">Primary actions</cs-button-dropdown>
-  <cs-button-dropdown variant="normal">Normal actions</cs-button-dropdown>
-  <cs-button-dropdown variant="icon" icon-name="ellipsis" aria-label="More actions"></cs-button-dropdown>
+  <cs-button-dropdown id="demo-bd-primary" variant="primary">Primary actions</cs-button-dropdown>
+  <cs-button-dropdown id="demo-bd-normal" variant="normal">Normal actions</cs-button-dropdown>
+  <cs-button-dropdown id="demo-bd-icon" variant="icon" icon-name="ellipsis" aria-label="More actions"></cs-button-dropdown>
 </ComponentPreview>
+
+<script>{`
+  var bdItems = [
+    { text: 'Edit', id: 'edit' },
+    { text: 'Delete', id: 'delete', disabled: true },
+    { text: 'Duplicate', id: 'duplicate' },
+  ];
+  ['demo-bd-primary', 'demo-bd-normal', 'demo-bd-icon'].forEach(function(id) {
+    var el = document.getElementById(id);
+    if (el) el.items = bdItems;
+  });
+`}</script>
 
 ## Usage
 

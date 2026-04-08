@@ -9,8 +9,20 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic tabs">
-  <cs-tabs></cs-tabs>
+  <cs-tabs id="demo-tabs"></cs-tabs>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-tabs');
+  if (el) {
+    el.tabs = [
+      { label: 'Overview', id: 'overview', content: 'Overview tab content' },
+      { label: 'Details', id: 'details', content: 'Details tab content' },
+      { label: 'Settings', id: 'settings', disabled: true },
+    ];
+    el.activeTabId = 'overview';
+  }
+`}</script>
 
 > **Note:** Tabs are set via the `tabs` JavaScript property. See usage below.
 

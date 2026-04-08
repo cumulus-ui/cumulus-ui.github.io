@@ -9,8 +9,22 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-attribute-editor add-button-text="Add new tag"></cs-attribute-editor>
+  <cs-attribute-editor id="demo-attr-editor" add-button-text="Add new tag"></cs-attribute-editor>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-attr-editor');
+  if (el) {
+    el.definition = [
+      { label: 'Key', control: item => item.key },
+      { label: 'Value', control: item => item.value },
+    ];
+    el.items = [
+      { key: 'Environment', value: 'Production' },
+      { key: 'Team', value: 'Frontend' },
+    ];
+  }
+`}</script>
 
 ## Usage
 

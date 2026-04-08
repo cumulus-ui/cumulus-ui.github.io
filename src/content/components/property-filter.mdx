@@ -9,8 +9,20 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Property filter">
-  <cs-property-filter></cs-property-filter>
+  <cs-property-filter id="demo-prop-filter"></cs-property-filter>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-prop-filter');
+  if (el) {
+    el.filteringProperties = [
+      { key: 'name', propertyLabel: 'Name', operators: ['=', '!=', ':', '!:'] },
+      { key: 'type', propertyLabel: 'Type', operators: ['=', '!='] },
+      { key: 'status', propertyLabel: 'Status', operators: ['=', '!='] },
+    ];
+    el.query = { tokens: [], operation: 'and' };
+  }
+`}</script>
 
 > **Note:** Query and filtering properties are set via JavaScript properties. See usage below.
 

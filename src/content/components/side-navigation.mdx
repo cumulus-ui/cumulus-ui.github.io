@@ -9,8 +9,28 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-side-navigation></cs-side-navigation>
+  <cs-side-navigation id="demo-sidenav" header="Navigation"></cs-side-navigation>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-sidenav');
+  if (el) {
+    el.items = [
+      { type: 'link', text: 'Dashboard', href: '#' },
+      { type: 'link', text: 'Instances', href: '#' },
+      {
+        type: 'section',
+        text: 'Storage',
+        items: [
+          { type: 'link', text: 'Buckets', href: '#' },
+          { type: 'link', text: 'Volumes', href: '#' },
+        ],
+      },
+      { type: 'divider' },
+      { type: 'link', text: 'Settings', href: '#' },
+    ];
+  }
+`}</script>
 
 > **Note:** The `items` property is set via JavaScript. See usage below.
 

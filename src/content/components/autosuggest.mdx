@@ -9,14 +9,37 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic autosuggest">
-  <cs-autosuggest placeholder="Search..."></cs-autosuggest>
+  <cs-autosuggest id="demo-autosuggest" placeholder="Search..."></cs-autosuggest>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-autosuggest');
+  if (el) {
+    el.options = [
+      { value: 'EC2 Instances' },
+      { value: 'S3 Buckets' },
+      { value: 'Lambda Functions' },
+      { value: 'RDS Databases' },
+    ];
+  }
+`}</script>
 
 > **Note:** Options are set via the `options` JavaScript property. See usage below.
 
 <ComponentPreview label="With empty text">
-  <cs-autosuggest placeholder="Type to search" empty="No matches found"></cs-autosuggest>
+  <cs-autosuggest id="demo-autosuggest-empty" placeholder="Type to search" empty="No matches found"></cs-autosuggest>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-autosuggest-empty');
+  if (el) {
+    el.options = [
+      { value: 'CloudWatch Metrics' },
+      { value: 'CloudTrail Logs' },
+      { value: 'Config Rules' },
+    ];
+  }
+`}</script>
 
 ## Usage
 
