@@ -1,0 +1,33 @@
+---
+title: Date Picker
+description: A form control that lets users select a single date from a dropdown calendar.
+tag: cs-date-picker
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-date-picker value="2025-01-15" placeholder="YYYY/MM/DD"></cs-date-picker>
+</ComponentPreview>
+
+<ComponentPreview label="Disabled">
+  <cs-date-picker value="2025-01-15" disabled></cs-date-picker>
+</ComponentPreview>
+
+<ComponentPreview label="Invalid">
+  <cs-date-picker value="2025-01-15" invalid></cs-date-picker>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-date-picker value="2025-01-15" placeholder="YYYY/MM/DD"></cs-date-picker>
+<cs-date-picker value="2025-01-15" disabled></cs-date-picker>
+<cs-date-picker value="2025-01-15" invalid></cs-date-picker>
+```
+
+## Properties
+
+<PropsTable component="date-picker" />

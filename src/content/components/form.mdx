@@ -1,0 +1,45 @@
+---
+title: Form
+description: A container that structures form content with a header and action buttons.
+tag: cs-form
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="With header and actions">
+  <cs-form>
+    <cs-header slot="header" variant="h1">Create distribution</cs-header>
+    <cs-container>
+      <cs-form-field label="Name">
+        <cs-input placeholder="Enter name"></cs-input>
+      </cs-form-field>
+    </cs-container>
+    <cs-space-between slot="actions" direction="horizontal" size="xs">
+      <cs-button variant="link">Cancel</cs-button>
+      <cs-button variant="primary">Submit</cs-button>
+    </cs-space-between>
+  </cs-form>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-form>
+  <cs-header slot="header" variant="h1">Create distribution</cs-header>
+  <cs-container>
+    <cs-form-field label="Name">
+      <cs-input placeholder="Enter name"></cs-input>
+    </cs-form-field>
+  </cs-container>
+  <cs-space-between slot="actions" direction="horizontal" size="xs">
+    <cs-button variant="link">Cancel</cs-button>
+    <cs-button variant="primary">Submit</cs-button>
+  </cs-space-between>
+</cs-form>
+```
+
+## Properties
+
+<PropsTable component="form" />

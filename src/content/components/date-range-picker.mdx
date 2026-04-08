@@ -1,0 +1,38 @@
+---
+title: Date Range Picker
+description: A form control that lets users select a date range or choose a relative time range.
+tag: cs-date-range-picker
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-date-range-picker placeholder="Filter by date range"></cs-date-range-picker>
+</ComponentPreview>
+
+## Usage
+
+The `value` and `relativeOptions` properties must be set via JavaScript:
+
+```html
+<cs-date-range-picker placeholder="Filter by date range"></cs-date-range-picker>
+
+<script>
+  const picker = document.querySelector('cs-date-range-picker');
+  picker.value = {
+    type: 'absolute',
+    startDate: '2025-01-01',
+    endDate: '2025-01-31',
+  };
+  picker.relativeOptions = [
+    { key: 'last-7', amount: 7, unit: 'day', type: 'relative' },
+    { key: 'last-30', amount: 30, unit: 'day', type: 'relative' },
+  ];
+</script>
+```
+
+## Properties
+
+<PropsTable component="date-range-picker" />

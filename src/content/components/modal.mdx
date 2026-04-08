@@ -1,0 +1,40 @@
+---
+title: Modal
+description: A dialog overlay that requires user interaction before returning to the main content.
+tag: cs-modal
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-button onclick="document.querySelector('#demo-modal').visible = true">Open modal</cs-button>
+  <cs-modal id="demo-modal" header="Delete resource">
+    <p>Are you sure you want to delete this resource? This action cannot be undone.</p>
+    <cs-space-between slot="footer" direction="horizontal" size="xs">
+      <cs-button variant="link" onclick="document.querySelector('#demo-modal').visible = false">Cancel</cs-button>
+      <cs-button variant="primary" onclick="document.querySelector('#demo-modal').visible = false">Delete</cs-button>
+    </cs-space-between>
+  </cs-modal>
+</ComponentPreview>
+
+## Usage
+
+The `visible` property is controlled via JavaScript:
+
+```html
+<cs-button onclick="document.querySelector('#my-modal').visible = true">Open modal</cs-button>
+
+<cs-modal id="my-modal" header="Confirm action">
+  <p>Are you sure you want to proceed?</p>
+  <cs-space-between slot="footer" direction="horizontal" size="xs">
+    <cs-button variant="link" onclick="document.querySelector('#my-modal').visible = false">Cancel</cs-button>
+    <cs-button variant="primary" onclick="document.querySelector('#my-modal').visible = false">Confirm</cs-button>
+  </cs-space-between>
+</cs-modal>
+```
+
+## Properties
+
+<PropsTable component="modal" />

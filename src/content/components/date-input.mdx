@@ -1,0 +1,33 @@
+---
+title: Date Input
+description: A text input that accepts a date value in a specified format.
+tag: cs-date-input
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-date-input value="2025-01-15" placeholder="YYYY/MM/DD"></cs-date-input>
+</ComponentPreview>
+
+<ComponentPreview label="Disabled">
+  <cs-date-input value="2025-01-15" disabled></cs-date-input>
+</ComponentPreview>
+
+<ComponentPreview label="Invalid">
+  <cs-date-input value="2025-01-15" invalid></cs-date-input>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-date-input value="2025-01-15" placeholder="YYYY/MM/DD"></cs-date-input>
+<cs-date-input value="2025-01-15" disabled></cs-date-input>
+<cs-date-input value="2025-01-15" invalid></cs-date-input>
+```
+
+## Properties
+
+<PropsTable component="date-input" />

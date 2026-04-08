@@ -1,0 +1,28 @@
+---
+title: Calendar
+description: A month-view calendar that lets users select a single date.
+tag: cs-calendar
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-calendar value="2025-01-15"></cs-calendar>
+</ComponentPreview>
+
+<ComponentPreview label="Locale">
+  <cs-calendar value="2025-01-15" locale="de-DE"></cs-calendar>
+</ComponentPreview>
+
+## Usage
+
+```html
+<cs-calendar value="2025-01-15"></cs-calendar>
+<cs-calendar value="2025-03-01" locale="de-DE"></cs-calendar>
+```
+
+## Properties
+
+<PropsTable component="calendar" />

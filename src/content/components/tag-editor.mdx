@@ -1,0 +1,33 @@
+---
+title: Tag Editor
+description: A form control that lets users add, edit, and remove resource tags as key-value pairs.
+tag: cs-tag-editor
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-tag-editor></cs-tag-editor>
+</ComponentPreview>
+
+## Usage
+
+The `tags` property must be set via JavaScript:
+
+```html
+<cs-tag-editor></cs-tag-editor>
+
+<script>
+  const editor = document.querySelector('cs-tag-editor');
+  editor.tags = [
+    { key: 'Environment', value: 'Production', existing: true },
+    { key: 'Team', value: 'Frontend', existing: false },
+  ];
+</script>
+```
+
+## Properties
+
+<PropsTable component="tag-editor" />

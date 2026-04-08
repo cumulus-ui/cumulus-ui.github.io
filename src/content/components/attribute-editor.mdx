@@ -1,0 +1,37 @@
+---
+title: Attribute Editor
+description: A dynamic form that lets users add, edit, and remove key-value attribute rows.
+tag: cs-attribute-editor
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-attribute-editor add-button-text="Add new tag"></cs-attribute-editor>
+</ComponentPreview>
+
+## Usage
+
+The `items` and `definition` properties must be set via JavaScript:
+
+```html
+<cs-attribute-editor add-button-text="Add new tag"></cs-attribute-editor>
+
+<script>
+  const editor = document.querySelector('cs-attribute-editor');
+  editor.definition = [
+    { label: 'Key', control: (item) => item.key },
+    { label: 'Value', control: (item) => item.value },
+  ];
+  editor.items = [
+    { key: 'Environment', value: 'Production' },
+    { key: 'Team', value: 'Frontend' },
+  ];
+</script>
+```
+
+## Properties
+
+<PropsTable component="attribute-editor" />

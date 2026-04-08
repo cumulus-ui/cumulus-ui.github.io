@@ -1,0 +1,32 @@
+---
+title: File Upload
+description: A form control that lets users select and upload files.
+tag: cs-file-upload
+---
+import ComponentPreview from '../../components/ComponentPreview.astro';
+import PropsTable from '../../components/PropsTable.astro';
+
+## Preview
+
+<ComponentPreview label="Basic">
+  <cs-file-upload accept=".png,.jpg,.pdf"></cs-file-upload>
+</ComponentPreview>
+
+## Usage
+
+The `value` property is a `FileList` and must be managed via JavaScript:
+
+```html
+<cs-file-upload accept=".png,.jpg,.pdf" multiple></cs-file-upload>
+
+<script>
+  const upload = document.querySelector('cs-file-upload');
+  upload.addEventListener('cs-change', (e) => {
+    console.log('Selected files:', e.detail.value);
+  });
+</script>
+```
+
+## Properties
+
+<PropsTable component="file-upload" />
