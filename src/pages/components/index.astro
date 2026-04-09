@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
+import { displayName } from '@/utils/display-name';
 
-const components = (await getCollection('components')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const components = (await getCollection('components')).sort((a, b) => a.data.tag.localeCompare(b.data.tag));
 const breadcrumbs = [
   { text: 'Home', href: '/' },
   { text: 'Components', href: '/components' },
@@ -22,7 +23,7 @@ const breadcrumbs = [
             <a href={`/components/${comp.id}`} class="tile-link">
               <cs-container fit-height>
                 <cs-header slot="header" description={comp.data.description}>
-                  {comp.data.title}
+                  {displayName(comp.data.tag)}
                 </cs-header>
                 <code>&lt;{comp.data.tag}&gt;</code>
               </cs-container>

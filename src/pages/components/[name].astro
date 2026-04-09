@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { getCollection, render } from 'astro:content';
+import { displayName } from '@/utils/display-name';
 
 export async function getStaticPaths() {
   const components = await getCollection('components');
@@ -12,17 +13,18 @@ export async function getStaticPaths() {
 
 const { comp } = Astro.props;
 const { Content } = await render(comp);
+const title = displayName(comp.data.tag);
 
 const breadcrumbs = [
   { text: 'Home', href: '/' },
   { text: 'Components', href: '/components' },
-  { text: comp.data.title, href: `/components/${comp.id}` },
+  { text: title, href: `/components/${comp.id}` },
 ];
 ---
-<BaseLayout title={comp.data.title} breadcrumbs={breadcrumbs} activeComponentId={comp.id}>
+<BaseLayout title={title} breadcrumbs={breadcrumbs} activeComponentId={comp.id}>
   <cs-content-layout default-padding>
     <cs-header slot="header" variant="h1" description={`${comp.data.description} — <${comp.data.tag}>`}>
-      {comp.data.title}
+      {title}
     </cs-header>
     <Content />
   </cs-content-layout>

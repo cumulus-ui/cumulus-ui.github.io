@@ -4,6 +4,7 @@ import '@fontsource/open-sans/400.css';
 import '@fontsource/open-sans/600.css';
 import '@fontsource/open-sans/700.css';
 import { getCollection } from 'astro:content';
+import { displayName } from '@/utils/display-name';
 
 interface Props {
   title: string;
@@ -13,11 +14,11 @@ interface Props {
 }
 
 const { title, breadcrumbs = [], activeComponentId, disableContentPaddings = false } = Astro.props;
-const components = (await getCollection('components')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const components = (await getCollection('components')).sort((a, b) => a.data.tag.localeCompare(b.data.tag));
 
 const navItems = components.map(comp => ({
   type: 'link' as const,
-  text: comp.data.title,
+  text: displayName(comp.data.tag),
   href: `/components/${comp.id}`,
 }));
 ---
