@@ -2,37 +2,61 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 
-const components = (await getCollection('components')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const components = await getCollection('components');
 const breadcrumbs = [{ text: 'Home', href: '/' }];
 ---
 <BaseLayout title="Home" breadcrumbs={breadcrumbs}>
   <cs-content-layout default-padding>
-    <cs-header slot="header" variant="h1" description="Web Components inspired by Cloudscape Design System.">
+    <cs-header slot="header" variant="h1" description="The Cloudscape Design System, rebuilt as framework-agnostic Web Components.">
       Cumulus UI
     </cs-header>
-    <div class="tiles-grid">
-      {components.map(comp => (
-          <a href={`/components/${comp.id}`} class="tile-link">
-            <cs-container fit-height>
-              <cs-header slot="header" description={comp.data.description}>
-                {comp.data.title}
-              </cs-header>
-              <code>&lt;{comp.data.tag}&gt;</code>
-            </cs-container>
-          </a>
-      ))}
-    </div>
+
+    <cs-space-between size="l" direction="vertical">
+      <cs-column-layout columns="2">
+        <cs-container>
+          <cs-header slot="header">What it is</cs-header>
+          <cs-box>
+            Cumulus UI re-implements <cs-link href="https://cloudscape.design" external>AWS Cloudscape</cs-link> as
+            native <cs-link href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components" external>Custom Elements</cs-link> using
+            Lit. The same design, tokens, and accessibility — without a React runtime.
+          </cs-box>
+        </cs-container>
+        <cs-container>
+          <cs-header slot="header">Why it exists</cs-header>
+          <cs-box>
+            Cloudscape is a mature, accessible design system built for the AWS console.
+            Cumulus brings it to teams that use Vue, Angular, Svelte, Astro, or plain HTML.
+          </cs-box>
+        </cs-container>
+      </cs-column-layout>
+
+      <cs-container>
+        <cs-header slot="header">Get started</cs-header>
+        <cs-space-between size="m" direction="vertical">
+          <cs-box>Install the packages:</cs-box>
+          <pre class="astro-code" style="padding: 12px 16px; border-radius: 8px; background: var(--color-background-container-content, #fff);">npm install @cumulus-ui/components @cumulus-ui/design-tokens</pre>
+          <cs-box>Use a component:</cs-box>
+          <pre class="astro-code" style="padding: 12px 16px; border-radius: 8px; background: var(--color-background-container-content, #fff);">&lt;script type="module"&gt;
+  import '@cumulus-ui/design-tokens/tokens.css';
+  import '@cumulus-ui/components';
+&lt;/script&gt;
+
+&lt;cs-button variant="primary"&gt;Launch instance&lt;/cs-button&gt;</pre>
+        </cs-space-between>
+      </cs-container>
+
+      <cs-container>
+        <cs-header slot="header">Project status</cs-header>
+        <cs-box>
+          Cumulus UI is pre-release software. {components.length} components are implemented with
+          auto-generated styles and design tokens tracked against Cloudscape upstream.
+          The API is not yet stable — expect breaking changes before 1.0.
+        </cs-box>
+      </cs-container>
+
+      <cs-box text-align="center" padding="l">
+        <cs-button variant="primary" href="/components">Browse {components.length} components</cs-button>
+      </cs-box>
+    </cs-space-between>
   </cs-content-layout>
 </BaseLayout>
-
-<style>
-  .tiles-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: var(--space-s);
-  }
-  .tile-link {
-    display: grid;
-    text-decoration: none;
-  }
-</style>

@@ -1,0 +1,41 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+
+const components = (await getCollection('components')).sort((a, b) => a.data.title.localeCompare(b.data.title));
+const breadcrumbs = [
+  { text: 'Home', href: '/' },
+  { text: 'Components', href: '/components' },
+];
+---
+<BaseLayout title="Components" breadcrumbs={breadcrumbs}>
+  <cs-content-layout default-padding>
+    <cs-header slot="header" variant="h1" description={`${components.length} components available.`}>
+      Components
+    </cs-header>
+    <div class="tiles-grid">
+      {components.map(comp => (
+          <a href={`/components/${comp.id}`} class="tile-link">
+            <cs-container fit-height>
+              <cs-header slot="header" description={comp.data.description}>
+                {comp.data.title}
+              </cs-header>
+              <code>&lt;{comp.data.tag}&gt;</code>
+            </cs-container>
+          </a>
+      ))}
+    </div>
+  </cs-content-layout>
+</BaseLayout>
+
+<style>
+  .tiles-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--space-s);
+  }
+  .tile-link {
+    display: grid;
+    text-decoration: none;
+  }
+</style>
