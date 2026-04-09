@@ -4,8 +4,8 @@ import { glob } from 'astro/loaders';
 const components = defineCollection({
   loader: glob({ pattern: '**/*.mdx', base: './src/content/components' }),
   schema: z.object({
+    component: z.string(),
     description: z.string(),
-    tag: z.string(),
   }),
 });
 

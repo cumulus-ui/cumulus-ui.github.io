@@ -1,12 +1,11 @@
 /**
- * Derive a display name from a Cumulus component tag.
- * cs-radio-group → Radio group
- * cs-s3-resource-selector → S3 resource selector
- * cs-key-value-pairs → Key-value pairs
+ * Derive a display name from a component slug.
+ * radio-group → Radio group
+ * s3-resource-selector → S3 resource selector
+ * key-value-pairs → Key-value pairs
  */
-export function displayName(tag: string): string {
-  return tag
-    .replace(/^cs-/, '')
+export function displayName(slug: string): string {
+  return slug
     .replace(/\b\w/, c => c.toUpperCase())
     .replace(/-/g, ' ')
     .replace('key value', 'key-value')

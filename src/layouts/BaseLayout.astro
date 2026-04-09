@@ -14,11 +14,11 @@ interface Props {
 }
 
 const { title, breadcrumbs = [], activeComponentId, disableContentPaddings = false } = Astro.props;
-const components = (await getCollection('components')).sort((a, b) => a.data.tag.localeCompare(b.data.tag));
+const components = (await getCollection('components')).sort((a, b) => a.data.component.localeCompare(b.data.component));
 
 const navItems = components.map(comp => ({
   type: 'link' as const,
-  text: displayName(comp.data.tag),
+  text: displayName(comp.data.component),
   href: `/components/${comp.id}`,
 }));
 ---
