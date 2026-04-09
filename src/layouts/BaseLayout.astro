@@ -9,9 +9,10 @@ interface Props {
   title: string;
   breadcrumbs?: Array<{ text: string; href: string }>;
   activeComponentId?: string;
+  disableContentPaddings?: boolean;
 }
 
-const { title, breadcrumbs = [], activeComponentId } = Astro.props;
+const { title, breadcrumbs = [], activeComponentId, disableContentPaddings = false } = Astro.props;
 const components = (await getCollection('components')).sort((a, b) => a.data.title.localeCompare(b.data.title));
 
 const navItems = components.map(comp => ({
@@ -35,6 +36,7 @@ const navItems = components.map(comp => ({
     <cs-app-layout-toolbar
       id="app-layout"
       tools-hide
+      {...disableContentPaddings ? { 'disable-content-paddings': true } : {}}
     >
       <div slot="navigation">
         <cs-side-navigation

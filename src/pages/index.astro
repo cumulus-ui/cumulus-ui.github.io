@@ -5,54 +5,49 @@ import { getCollection } from 'astro:content';
 const components = await getCollection('components');
 const breadcrumbs = [{ text: 'Home', href: '/' }];
 ---
-<BaseLayout title="Home" breadcrumbs={breadcrumbs}>
-  <cs-content-layout default-padding>
-    <cs-header slot="header" variant="h1" description="The Cloudscape Design System, rebuilt as framework-agnostic Web Components.">
-      Cumulus UI
-    </cs-header>
+<BaseLayout title="Home" breadcrumbs={breadcrumbs} disableContentPaddings>
+  <cs-content-layout default-padding header-variant="high-contrast" header-background-style="linear-gradient(135deg, #0f1b2d 0%, #232f3e 50%, #1a3a5c 100%)">
+    <div slot="header" class="hero">
+      <cs-space-between size="xs" direction="vertical">
+        <h1 class="hero-title">Cumulus UI</h1>
+        <cs-box variant="p" color="inherit" font-size="heading-m">
+          The Cloudscape Design System, rebuilt as framework-agnostic Web Components.
+        </cs-box>
+        <cs-box padding="s">
+          <cs-space-between size="xs" direction="horizontal">
+            <cs-badge color="blue">{components.length} components</cs-badge>
+            <cs-badge color="grey">Pre-release</cs-badge>
+          </cs-space-between>
+        </cs-box>
+      </cs-space-between>
+    </div>
 
     <cs-space-between size="l" direction="vertical">
-      <cs-column-layout columns="2">
+      <div class="two-col">
         <cs-container>
           <cs-header slot="header">What it is</cs-header>
-          <cs-box>
-            Cumulus UI re-implements <cs-link href="https://cloudscape.design" external>AWS Cloudscape</cs-link> as
-            native <cs-link href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components" external>Custom Elements</cs-link> using
-            Lit. The same design, tokens, and accessibility, without a React runtime.
-          </cs-box>
+          <cs-box><cs-link href="https://cloudscape.design" external>Cloudscape Design System</cs-link> components as native <cs-link href="https://developer.mozilla.org/en-US/docs/Web/API/Web_components" external>Custom Elements</cs-link>, built with Lit. Same design, same tokens, same accessibility. No React required.</cs-box>
         </cs-container>
         <cs-container>
           <cs-header slot="header">Why it exists</cs-header>
-          <cs-box>
-            Cloudscape is a mature, accessible design system built for the AWS console.
-            Cumulus brings it to teams that use Vue, Angular, Svelte, Astro, or plain HTML.
-          </cs-box>
+          <cs-box>Cloudscape is a mature, accessible design system powering the AWS console. Cumulus brings it to Vue, Angular, Svelte, Astro, and plain HTML.</cs-box>
         </cs-container>
-      </cs-column-layout>
+      </div>
 
       <cs-container>
         <cs-header slot="header">Get started</cs-header>
         <cs-space-between size="m" direction="vertical">
           <cs-box>Install the packages:</cs-box>
-          <pre class="astro-code" style="padding: 12px 16px; border-radius: 8px; background: var(--color-background-container-content, #fff);">npm install @cumulus-ui/components @cumulus-ui/design-tokens</pre>
+          <cs-code-view content="npm install @cumulus-ui/components @cumulus-ui/design-tokens"></cs-code-view>
           <cs-box>Use a component:</cs-box>
-          <pre class="astro-code" style="padding: 12px 16px; border-radius: 8px; background: var(--color-background-container-content, #fff);">&lt;script type="module"&gt;
-  import '@cumulus-ui/design-tokens/tokens.css';
-  import '@cumulus-ui/components';
-&lt;/script&gt;
-
-&lt;cs-button variant="primary"&gt;Launch instance&lt;/cs-button&gt;</pre>
+          <cs-code-view content={`<script type="module">\n  import '@cumulus-ui/design-tokens/tokens.css';\n  import '@cumulus-ui/components';\n</script>\n\n<cs-button variant="primary">Launch instance</cs-button>`}></cs-code-view>
         </cs-space-between>
       </cs-container>
 
-      <cs-container>
-        <cs-header slot="header">Project status</cs-header>
-        <cs-box>
-          Cumulus UI is pre-release software. {components.length} components are implemented with
-          auto-generated styles and design tokens tracked against Cloudscape upstream.
-          The API is not yet stable. Expect breaking changes before 1.0.
-        </cs-box>
-      </cs-container>
+      <cs-alert type="info" status-icon-aria-label="Info">
+        Cumulus UI is pre-release software. {components.length} components are implemented with auto-generated
+        styles and design tokens tracked against Cloudscape upstream. The API is not yet stable.
+      </cs-alert>
 
       <cs-box text-align="center" padding="l">
         <cs-button variant="primary" href="/components">Browse {components.length} components</cs-button>
@@ -60,3 +55,21 @@ const breadcrumbs = [{ text: 'Home', href: '/' }];
     </cs-space-between>
   </cs-content-layout>
 </BaseLayout>
+
+<style>
+  .hero {
+    padding-block: var(--space-xxxl);
+  }
+  .hero-title {
+    font-size: 48px;
+    font-weight: 700;
+    color: #ffffff;
+    margin: 0;
+    letter-spacing: -0.5px;
+  }
+  .two-col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-l);
+  }
+</style>
