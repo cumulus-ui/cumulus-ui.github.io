@@ -12,13 +12,21 @@ export async function getStaticPaths() {
 
 const { comp } = Astro.props;
 const { Content } = await render(comp);
+
+const breadcrumbs = [
+  { text: 'Home', href: '/' },
+  { text: 'Components', href: '/' },
+  { text: comp.data.title, href: `/components/${comp.id}` },
+];
 ---
-<BaseLayout title={comp.data.title}>
-  <main style="max-width: 1200px; margin: 2rem auto; padding: 0 16px;">
-    <h1>{comp.data.title}</h1>
-    <p>{comp.data.description}</p>
-    <code>&lt;{comp.data.tag}&gt;</code>
-    <hr />
+<BaseLayout title={comp.data.title} breadcrumbs={breadcrumbs} activeComponentId={comp.id}>
+  <cs-space-between size="l" direction="vertical">
+    <div>
+      <cs-header variant="h1" description={`<${comp.data.tag}${'>'}`}>
+        {comp.data.title}
+      </cs-header>
+      <cs-box color="text-body-secondary">{comp.data.description}</cs-box>
+    </div>
     <Content />
-  </main>
+  </cs-space-between>
 </BaseLayout>
