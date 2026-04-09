@@ -23,6 +23,23 @@ import PropsTable from '../../components/PropsTable.astro';
   document.getElementById('anchor-controlled').anchors = anchors;
 `}</script>
 
+<ComponentPreview label="Deep nesting">
+  <cs-anchor-navigation id="anchor-deep" active-href="#security" aria-label="Security docs"></cs-anchor-navigation>
+</ComponentPreview>
+
+<script>{`
+  document.getElementById('anchor-deep').anchors = [
+    { text: 'Identity and access', href: '#iam', level: 1 },
+    { text: 'Users', href: '#users', level: 2 },
+    { text: 'Roles', href: '#roles', level: 2 },
+    { text: 'Policies', href: '#policies', level: 2 },
+    { text: 'Network security', href: '#network', level: 1 },
+    { text: 'Security groups', href: '#security', level: 2 },
+    { text: 'NACLs', href: '#nacls', level: 2 },
+    { text: 'Encryption', href: '#encryption', level: 1 },
+  ];
+`}</script>
+
 ## Usage
 
 ```html

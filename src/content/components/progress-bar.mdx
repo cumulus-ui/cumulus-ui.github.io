@@ -20,6 +20,15 @@ import PropsTable from '../../components/PropsTable.astro';
   <cs-progress-bar value="30" status="error"></cs-progress-bar>
 </ComponentPreview>
 
+<ComponentPreview label="With labels">
+  <cs-progress-bar value="73" label="Uploading files" description="73 of 100 files uploaded" additional-info="Estimated time remaining: 2 minutes"></cs-progress-bar>
+</ComponentPreview>
+
+<ComponentPreview label="Result states">
+  <cs-progress-bar value="100" status="success" result-text="Upload complete. 100 files uploaded successfully."></cs-progress-bar>
+  <cs-progress-bar value="45" status="error" result-text="Upload failed. Network connection was interrupted."></cs-progress-bar>
+</ComponentPreview>
+
 ## Usage
 
 ```html

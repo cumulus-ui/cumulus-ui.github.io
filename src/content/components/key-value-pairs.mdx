@@ -23,6 +23,24 @@ import PropsTable from '../../components/PropsTable.astro';
   }
 `}</script>
 
+<ComponentPreview label="Multiple columns">
+  <cs-key-value-pairs id="demo-kvp-cols" columns="3"></cs-key-value-pairs>
+</ComponentPreview>
+
+<script>{`
+document.getElementById('demo-kvp-cols').items = [
+  { label: 'Instance ID', value: 'i-0123456789abcdef0' },
+  { label: 'Instance type', value: 't3.medium' },
+  { label: 'Availability zone', value: 'us-east-1a' },
+  { label: 'State', value: 'Running' },
+  { label: 'Public IP', value: '54.123.45.67' },
+  { label: 'Private IP', value: '10.0.1.42' },
+  { label: 'Launch date', value: '2025-01-15' },
+  { label: 'AMI ID', value: 'ami-0abcdef1234567890' },
+  { label: 'VPC ID', value: 'vpc-0123456789abcdef0' },
+];
+`}</script>
+
 > **Note:** Items are set via the `items` JavaScript property. See usage below.
 
 ## Usage

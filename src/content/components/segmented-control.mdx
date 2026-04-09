@@ -23,6 +23,14 @@ import PropsTable from '../../components/PropsTable.astro';
   </cs-segmented-control>
 </ComponentPreview>
 
+<ComponentPreview label="With disabled option">
+  <cs-segmented-control selected-id="active">
+    <cs-segmented-control-option id="active" text="Active"></cs-segmented-control-option>
+    <cs-segmented-control-option id="stopped" text="Stopped"></cs-segmented-control-option>
+    <cs-segmented-control-option id="terminated" text="Terminated" disabled></cs-segmented-control-option>
+  </cs-segmented-control>
+</ComponentPreview>
+
 ## Usage
 
 ```html

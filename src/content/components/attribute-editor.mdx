@@ -26,6 +26,41 @@ import PropsTable from '../../components/PropsTable.astro';
   }
 `}</script>
 
+<ComponentPreview label="Empty">
+  <cs-attribute-editor id="demo-attr-empty" add-button-text="Add new tag"></cs-attribute-editor>
+</ComponentPreview>
+
+<script>{`
+  const empty = document.getElementById('demo-attr-empty');
+  if (empty) {
+    empty.definition = [
+      { label: 'Key', control: item => item.key },
+      { label: 'Value', control: item => item.value },
+    ];
+    empty.items = [];
+  }
+`}</script>
+
+<ComponentPreview label="With description">
+  <cs-attribute-editor id="demo-attr-desc" add-button-text="Add new tag">
+    <cs-header slot="header" variant="h3" description="Tags help you manage, identify, and organize resources." counter="(2)">Tags</cs-header>
+  </cs-attribute-editor>
+</ComponentPreview>
+
+<script>{`
+  const desc = document.getElementById('demo-attr-desc');
+  if (desc) {
+    desc.definition = [
+      { label: 'Key', control: item => item.key },
+      { label: 'Value', control: item => item.value },
+    ];
+    desc.items = [
+      { key: 'Environment', value: 'Production' },
+      { key: 'CostCenter', value: 'CC-1234' },
+    ];
+  }
+`}</script>
+
 ## Usage
 
 The `items` and `definition` properties must be set via JavaScript:

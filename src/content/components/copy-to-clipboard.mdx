@@ -12,6 +12,14 @@ import PropsTable from '../../components/PropsTable.astro';
   <cs-copy-to-clipboard text-to-copy="Hello, world!" copy-button-text="Copy"></cs-copy-to-clipboard>
 </ComponentPreview>
 
+<ComponentPreview label="Inline">
+  <cs-copy-to-clipboard variant="inline" text-to-copy="i-0123456789abcdef0" copy-button-text="Copy ID">i-0123456789abcdef0</cs-copy-to-clipboard>
+</ComponentPreview>
+
+<ComponentPreview label="Copy S3 URI">
+  <cs-copy-to-clipboard text-to-copy="s3://my-bucket/config/settings.json" copy-button-text="Copy URI" copy-success-text="URI copied" copy-error-text="Copy failed"></cs-copy-to-clipboard>
+</ComponentPreview>
+
 ## Usage
 
 ```html

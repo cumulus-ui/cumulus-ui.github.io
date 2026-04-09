@@ -22,6 +22,34 @@ import PropsTable from '../../components/PropsTable.astro';
   ];
 `}</script>
 
+<ComponentPreview label="Asymmetric (8-4)">
+  <cs-grid id="grid-asym">
+    <div style="background:#e9ebed;padding:16px;border-radius:4px">Main content (8 columns)</div>
+    <div style="background:#e9ebed;padding:16px;border-radius:4px">Sidebar (4 columns)</div>
+  </cs-grid>
+</ComponentPreview>
+
+<script>{`
+document.getElementById('grid-asym').gridDefinition = [
+  { colspan: 8 }, { colspan: 4 }
+];
+`}</script>
+
+<ComponentPreview label="Four columns">
+  <cs-grid id="grid-four">
+    <div style="background:#e9ebed;padding:16px;border-radius:4px">Quarter 1</div>
+    <div style="background:#e9ebed;padding:16px;border-radius:4px">Quarter 2</div>
+    <div style="background:#e9ebed;padding:16px;border-radius:4px">Quarter 3</div>
+    <div style="background:#e9ebed;padding:16px;border-radius:4px">Quarter 4</div>
+  </cs-grid>
+</ComponentPreview>
+
+<script>{`
+document.getElementById('grid-four').gridDefinition = [
+  { colspan: 3 }, { colspan: 3 }, { colspan: 3 }, { colspan: 3 }
+];
+`}</script>
+
 ## Usage
 
 ```html

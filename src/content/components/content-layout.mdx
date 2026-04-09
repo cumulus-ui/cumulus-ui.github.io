@@ -10,8 +10,21 @@ import PropsTable from '../../components/PropsTable.astro';
 
 <ComponentPreview label="Basic">
   <cs-content-layout>
-    <div slot="header" style="padding: 16px; background: var(--color-background-layout-main-5ilwcb, #fff);">Page Header</div>
-    <div style="padding: 16px;">Main content goes here.</div>
+    <cs-header slot="header" variant="h1" description="Configure and manage your CloudFront distributions.">Distributions</cs-header>
+    <cs-container header="Origin settings">
+      Main content goes here.
+    </cs-container>
+  </cs-content-layout>
+</ComponentPreview>
+
+<ComponentPreview label="With header background">
+  <cs-content-layout header-background-style="linear-gradient(135deg, #232f3e 0%, #1b2838 100%)">
+    <cs-header slot="header" variant="h1" description="Welcome to the AWS Management Console.">
+      <span style="color: white;">Dashboard</span>
+    </cs-header>
+    <cs-container header="Getting started">
+      Your resources and recommendations will appear here.
+    </cs-container>
   </cs-content-layout>
 </ComponentPreview>
 

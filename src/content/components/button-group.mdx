@@ -23,6 +23,22 @@ import PropsTable from '../../components/PropsTable.astro';
   }
 `}</script>
 
+<ComponentPreview label="With menu dropdown">
+  <cs-button-group id="demo-btn-group-menu"></cs-button-group>
+</ComponentPreview>
+
+<script>{`
+  document.getElementById('demo-btn-group-menu').items = [
+    { type: 'icon-button', text: 'Copy', iconName: 'copy', id: 'copy' },
+    { type: 'icon-button', text: 'Edit', iconName: 'edit', id: 'edit' },
+    { type: 'menu-dropdown', text: 'More', iconName: 'ellipsis', id: 'more', items: [
+      { id: 'rename', text: 'Rename' },
+      { id: 'move', text: 'Move' },
+      { id: 'delete', text: 'Delete' },
+    ]},
+  ];
+`}</script>
+
 > **Note:** Items are set via the `items` JavaScript property. See usage below.
 
 ## Usage

@@ -9,16 +9,37 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic">
-  <cs-app-layout content-type="default">
-    <div slot="navigation">Navigation</div>
-    <div slot="content">
-      <cs-container header="Main content">
-        Page content goes here.
-      </cs-container>
-    </div>
-    <div slot="tools">Tools panel</div>
-  </cs-app-layout>
+  <div style="height: 400px; position: relative; overflow: hidden; border: 1px solid var(--color-border-divider-default); border-radius: 8px;">
+    <cs-app-layout content-type="default" navigation-open>
+      <cs-side-navigation slot="navigation" id="demo-app-nav" header="Services"></cs-side-navigation>
+      <div slot="content">
+        <cs-content-layout>
+          <cs-header slot="header" variant="h1">Instances</cs-header>
+          <cs-container header="EC2 Instances">
+            Your instance listing would appear here.
+          </cs-container>
+        </cs-content-layout>
+      </div>
+      <cs-help-panel slot="tools" header="Help">
+        <p>Select an instance to view its details, or choose an action from the menu.</p>
+      </cs-help-panel>
+    </cs-app-layout>
+  </div>
 </ComponentPreview>
+
+<script>{`
+  const nav = document.getElementById('demo-app-nav');
+  if (nav) {
+    nav.items = [
+      { type: 'link', text: 'Dashboard', href: '#' },
+      { type: 'link', text: 'Instances', href: '#' },
+      { type: 'section', text: 'Storage', items: [
+        { type: 'link', text: 'Volumes', href: '#' },
+        { type: 'link', text: 'Snapshots', href: '#' },
+      ]},
+    ];
+  }
+`}</script>
 
 ## Usage
 

@@ -13,6 +13,17 @@ import PropsTable from '../../components/PropsTable.astro';
   <cs-file-input text="Choose files" multiple></cs-file-input>
 </ComponentPreview>
 
+<ComponentPreview label="In form field">
+  <cs-form-field label="Upload certificate" description="Upload a PEM-encoded certificate file." constraint-text="Accepted formats: .pem, .crt">
+    <cs-file-input text="Choose file" accept=".pem,.crt"></cs-file-input>
+  </cs-form-field>
+</ComponentPreview>
+
+<ComponentPreview label="Variants">
+  <cs-file-input text="Choose file" variant="icon" icon-name="upload"></cs-file-input>
+  <cs-file-input text="Choose files" multiple></cs-file-input>
+</ComponentPreview>
+
 ## Usage
 
 ```html

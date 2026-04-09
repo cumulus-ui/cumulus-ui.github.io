@@ -21,6 +21,33 @@ import PropsTable from '../../components/PropsTable.astro';
   }
 `}</script>
 
+<ComponentPreview label="Multiple files">
+  <cs-file-upload id="demo-file-upload-multi" accept=".png,.jpg,.pdf" multiple></cs-file-upload>
+</ComponentPreview>
+
+<script>{`
+const multi = document.getElementById('demo-file-upload-multi');
+if (multi) {
+  multi.label = 'Upload images';
+  multi.description = 'Upload one or more image files.';
+  multi.constraintText = 'Accepted formats: PNG, JPG, PDF. Max 10 MB each.';
+}
+`}</script>
+
+<ComponentPreview label="With error">
+  <cs-form-field label="Attachments" error-text="File exceeds the maximum size limit.">
+    <cs-file-upload id="demo-file-upload-error" accept=".png,.jpg" invalid></cs-file-upload>
+  </cs-form-field>
+</ComponentPreview>
+
+<script>{`
+const err = document.getElementById('demo-file-upload-error');
+if (err) {
+  err.label = 'Upload file';
+  err.constraintText = 'Maximum file size: 5 MB';
+}
+`}</script>
+
 ## Usage
 
 The `value` property is a `FileList` and must be managed via JavaScript:

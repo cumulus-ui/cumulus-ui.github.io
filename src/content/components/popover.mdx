@@ -30,6 +30,38 @@ import PropsTable from '../../components/PropsTable.astro';
   </cs-popover>
 </ComponentPreview>
 
+<ComponentPreview label="Positions">
+  <cs-popover header="Top" position="top" trigger-type="text">
+    Top
+    <div slot="content">Appears above the trigger.</div>
+  </cs-popover>
+  <cs-popover header="Right" position="right" trigger-type="text">
+    Right
+    <div slot="content">Appears to the right.</div>
+  </cs-popover>
+  <cs-popover header="Bottom" position="bottom" trigger-type="text">
+    Bottom
+    <div slot="content">Appears below the trigger.</div>
+  </cs-popover>
+  <cs-popover header="Left" position="left" trigger-type="text">
+    Left
+    <div slot="content">Appears to the left.</div>
+  </cs-popover>
+</ComponentPreview>
+
+<ComponentPreview label="Dismissible">
+  <cs-popover header="Instance details" dismissible dismiss-aria-label="Close" trigger-type="text" size="large">
+    i-0123456789abcdef0
+    <div slot="content">
+      <cs-space-between size="s" direction="vertical">
+        <div><b>Type:</b> t3.micro</div>
+        <div><b>State:</b> Running</div>
+        <div><b>AZ:</b> us-east-1a</div>
+      </cs-space-between>
+    </div>
+  </cs-popover>
+</ComponentPreview>
+
 ## Usage
 
 ```html
