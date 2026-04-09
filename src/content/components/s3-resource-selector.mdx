@@ -8,9 +8,27 @@ import PropsTable from '../../components/PropsTable.astro';
 
 ## Preview
 
-<ComponentPreview label="Basic">
-  <cs-s3-resource-selector></cs-s3-resource-selector>
+<ComponentPreview label="With resource">
+  <cs-s3-resource-selector id="demo-s3-selector"></cs-s3-resource-selector>
 </ComponentPreview>
+
+<script>{`
+  const el = document.getElementById('demo-s3-selector');
+  if (el) {
+    el.resource = { uri: 's3://my-application-bucket/config/settings.json' };
+  }
+`}</script>
+
+<ComponentPreview label="Empty">
+  <cs-s3-resource-selector id="demo-s3-empty"></cs-s3-resource-selector>
+</ComponentPreview>
+
+<script>{`
+  const el2 = document.getElementById('demo-s3-empty');
+  if (el2) {
+    el2.resource = { uri: '' };
+  }
+`}</script>
 
 ## Usage
 
@@ -19,7 +37,7 @@ import PropsTable from '../../components/PropsTable.astro';
 
 <script>
   const selector = document.querySelector('cs-s3-resource-selector');
-  selector.resource = { uri: 's3://my-bucket/path/to/object' };
+  selector.resource = { uri: 's3://my-application-bucket/config/settings.json' };
   selector.addEventListener('change', (event) => {
     console.log('Selected resource:', event.detail.resource);
   });

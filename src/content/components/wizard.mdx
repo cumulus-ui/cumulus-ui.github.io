@@ -15,37 +15,76 @@ import PropsTable from '../../components/PropsTable.astro';
 <script>{`
   const el = document.getElementById('demo-wizard');
   if (el) {
+    const step1 = document.createElement('cs-container');
+    step1.setAttribute('header', 'Database engine');
+    step1.innerHTML = '<cs-tiles id="wiz-tiles"></cs-tiles>';
+
+    const step2 = document.createElement('cs-container');
+    step2.setAttribute('header', 'Instance settings');
+    step2.innerHTML = \`
+      <cs-space-between size="l" direction="vertical">
+        <cs-form-field label="Instance class">
+          <cs-select id="wiz-instance" placeholder="Choose instance class"></cs-select>
+        </cs-form-field>
+        <cs-form-field label="Storage (GiB)">
+          <cs-input type="number" value="20"></cs-input>
+        </cs-form-field>
+      </cs-space-between>
+    \`;
+
+    const step3 = document.createElement('cs-container');
+    step3.setAttribute('header', 'Review');
+    step3.innerHTML = \`
+      <cs-space-between size="l" direction="vertical">
+        <cs-key-value-pairs id="wiz-review"></cs-key-value-pairs>
+      </cs-space-between>
+    \`;
+
     el.steps = [
-      { title: 'Choose engine', description: 'Select a database engine.' },
-      { title: 'Configure settings', description: 'Set up networking and storage.' },
-      { title: 'Review and create', description: 'Verify and launch.' },
+      { title: 'Choose engine', description: 'Select a database engine for your instance.', content: step1 },
+      { title: 'Configure settings', description: 'Set up instance size and storage.', content: step2 },
+      { title: 'Review and create', description: 'Verify your configuration before launching.', content: step3 },
     ];
   }
 `}</script>
 
-> **Note:** The `steps` property is set via JavaScript. See usage below.
-
 ## Usage
 
 ```html
-<cs-wizard></cs-wizard>
+<cs-wizard id="my-wizard"></cs-wizard>
 
 <script>
-  const wizard = document.querySelector('cs-wizard');
+  const wizard = document.getElementById('my-wizard');
+
+  const step1 = document.createElement('cs-container');
+  step1.setAttribute('header', 'Database engine');
+  step1.innerHTML = '<cs-tiles id="wiz-tiles"></cs-tiles>';
+
+  const step2 = document.createElement('cs-container');
+  step2.setAttribute('header', 'Instance settings');
+  step2.innerHTML = `
+    <cs-space-between size="l" direction="vertical">
+      <cs-form-field label="Instance class">
+        <cs-select placeholder="Choose instance class"></cs-select>
+      </cs-form-field>
+      <cs-form-field label="Storage (GiB)">
+        <cs-input type="number" value="20"></cs-input>
+      </cs-form-field>
+    </cs-space-between>
+  `;
+
+  const step3 = document.createElement('cs-container');
+  step3.setAttribute('header', 'Review');
+  step3.innerHTML = `
+    <cs-space-between size="l" direction="vertical">
+      <cs-key-value-pairs id="wiz-review"></cs-key-value-pairs>
+    </cs-space-between>
+  `;
+
   wizard.steps = [
-    {
-      title: 'Choose engine',
-      description: 'Select a database engine.',
-      content: '<cs-container>Step 1 content</cs-container>',
-    },
-    {
-      title: 'Configure settings',
-      content: '<cs-container>Step 2 content</cs-container>',
-    },
-    {
-      title: 'Review and create',
-      content: '<cs-container>Step 3 content</cs-container>',
-    },
+    { title: 'Choose engine', description: 'Select a database engine for your instance.', content: step1 },
+    { title: 'Configure settings', description: 'Set up instance size and storage.', content: step2 },
+    { title: 'Review and create', description: 'Verify your configuration before launching.', content: step3 },
   ];
 </script>
 ```

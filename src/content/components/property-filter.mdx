@@ -9,18 +9,54 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Property filter">
-  <cs-property-filter id="demo-prop-filter"></cs-property-filter>
+  <cs-property-filter id="demo-prop-filter" filtering-placeholder="Find instances"></cs-property-filter>
 </ComponentPreview>
 
 <script>{`
   const el = document.getElementById('demo-prop-filter');
   if (el) {
     el.filteringProperties = [
-      { key: 'name', propertyLabel: 'Name', operators: ['=', '!=', ':', '!:'] },
-      { key: 'type', propertyLabel: 'Type', operators: ['=', '!='] },
-      { key: 'status', propertyLabel: 'Status', operators: ['=', '!='] },
+      { key: 'name', propertyLabel: 'Name', operators: ['=', '!=', ':', '!:'], groupValuesLabel: 'Name values' },
+      { key: 'type', propertyLabel: 'Type', operators: ['=', '!='], groupValuesLabel: 'Type values' },
+      { key: 'state', propertyLabel: 'State', operators: ['=', '!='], groupValuesLabel: 'State values' },
+      { key: 'region', propertyLabel: 'Region', operators: ['=', '!='], groupValuesLabel: 'Region values' },
     ];
-    el.query = { tokens: [], operation: 'and' };
+    el.query = {
+      tokens: [
+        { propertyKey: 'state', operator: '=', value: 'Running' },
+        { propertyKey: 'region', operator: '=', value: 'us-east-1' },
+      ],
+      operation: 'and',
+    };
+    el.filteringOptions = [
+      { propertyKey: 'state', value: 'Running' },
+      { propertyKey: 'state', value: 'Stopped' },
+      { propertyKey: 'state', value: 'Terminated' },
+      { propertyKey: 'region', value: 'us-east-1' },
+      { propertyKey: 'region', value: 'us-west-2' },
+      { propertyKey: 'region', value: 'eu-west-1' },
+      { propertyKey: 'type', value: 't3.micro' },
+      { propertyKey: 'type', value: 't3.small' },
+      { propertyKey: 'type', value: 'c5.xlarge' },
+    ];
+    el.countText = '5 matches';
+  }
+`}</script>
+
+<ComponentPreview label="Empty filter">
+  <cs-property-filter id="demo-prop-filter-empty" filtering-placeholder="Find instances"></cs-property-filter>
+</ComponentPreview>
+
+<script>{`
+  const el2 = document.getElementById('demo-prop-filter-empty');
+  if (el2) {
+    el2.filteringProperties = [
+      { key: 'name', propertyLabel: 'Name', operators: ['=', '!=', ':', '!:'], groupValuesLabel: 'Name values' },
+      { key: 'type', propertyLabel: 'Type', operators: ['=', '!='], groupValuesLabel: 'Type values' },
+      { key: 'state', propertyLabel: 'State', operators: ['=', '!='], groupValuesLabel: 'State values' },
+      { key: 'region', propertyLabel: 'Region', operators: ['=', '!='], groupValuesLabel: 'Region values' },
+    ];
+    el2.query = { tokens: [], operation: 'and' };
   }
 `}</script>
 
@@ -29,21 +65,35 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Usage
 
 ```html
-<cs-property-filter></cs-property-filter>
+<cs-property-filter filtering-placeholder="Find instances"></cs-property-filter>
 
 <script>
   const filter = document.querySelector('cs-property-filter');
   filter.filteringProperties = [
-    { key: 'name', propertyLabel: 'Name', operators: ['=', '!=', ':', '!:'] },
-    { key: 'type', propertyLabel: 'Type', operators: ['=', '!='] },
-    { key: 'status', propertyLabel: 'Status', operators: ['=', '!='] },
+    { key: 'name', propertyLabel: 'Name', operators: ['=', '!=', ':', '!:'], groupValuesLabel: 'Name values' },
+    { key: 'type', propertyLabel: 'Type', operators: ['=', '!='], groupValuesLabel: 'Type values' },
+    { key: 'state', propertyLabel: 'State', operators: ['=', '!='], groupValuesLabel: 'State values' },
+    { key: 'region', propertyLabel: 'Region', operators: ['=', '!='], groupValuesLabel: 'Region values' },
   ];
   filter.query = {
     tokens: [
-      { propertyKey: 'status', operator: '=', value: 'Active' },
+      { propertyKey: 'state', operator: '=', value: 'Running' },
+      { propertyKey: 'region', operator: '=', value: 'us-east-1' },
     ],
     operation: 'and',
   };
+  filter.filteringOptions = [
+    { propertyKey: 'state', value: 'Running' },
+    { propertyKey: 'state', value: 'Stopped' },
+    { propertyKey: 'state', value: 'Terminated' },
+    { propertyKey: 'region', value: 'us-east-1' },
+    { propertyKey: 'region', value: 'us-west-2' },
+    { propertyKey: 'region', value: 'eu-west-1' },
+    { propertyKey: 'type', value: 't3.micro' },
+    { propertyKey: 'type', value: 't3.small' },
+    { propertyKey: 'type', value: 'c5.xlarge' },
+  ];
+  filter.countText = '5 matches';
 </script>
 ```
 

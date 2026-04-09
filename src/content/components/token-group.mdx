@@ -8,26 +8,40 @@ import PropsTable from '../../components/PropsTable.astro';
 
 ## Preview
 
-<ComponentPreview label="Layouts">
-  <cs-token-group alignment="horizontal">
-    <cs-token>Tag A</cs-token>
-    <cs-token>Tag B</cs-token>
-    <cs-token>Tag C</cs-token>
-  </cs-token-group>
-  <cs-token-group alignment="vertical">
-    <cs-token>Tag A</cs-token>
-    <cs-token>Tag B</cs-token>
-    <cs-token>Tag C</cs-token>
-  </cs-token-group>
+<ComponentPreview label="Horizontal (default)">
+  <cs-token-group id="tg-horizontal"></cs-token-group>
 </ComponentPreview>
+
+<ComponentPreview label="Vertical">
+  <cs-token-group id="tg-vertical" alignment="vertical"></cs-token-group>
+</ComponentPreview>
+
+<ComponentPreview label="With limit">
+  <cs-token-group id="tg-limited" limit="2"></cs-token-group>
+</ComponentPreview>
+
+<script>{`
+  const tags = [
+    { label: 'us-east-1', dismissLabel: 'Remove us-east-1' },
+    { label: 'eu-west-1', dismissLabel: 'Remove eu-west-1' },
+    { label: 'ap-southeast-1', dismissLabel: 'Remove ap-southeast-1' },
+    { label: 'us-west-2', dismissLabel: 'Remove us-west-2' },
+  ];
+  document.getElementById('tg-horizontal').items = tags.slice(0, 3);
+  document.getElementById('tg-vertical').items = tags.slice(0, 3);
+  document.getElementById('tg-limited').items = tags;
+`}</script>
 
 ## Usage
 
 ```html
-<cs-token-group alignment="horizontal">
-  <cs-token>Tag A</cs-token>
-  <cs-token>Tag B</cs-token>
-</cs-token-group>
+<cs-token-group id="my-tokens"></cs-token-group>
+<script>
+  document.getElementById('my-tokens').items = [
+    { label: 'Tag A', dismissLabel: 'Remove Tag A' },
+    { label: 'Tag B', dismissLabel: 'Remove Tag B' },
+  ];
+</script>
 ```
 
 ## Properties

@@ -9,43 +9,85 @@ import PropsTable from '../../components/PropsTable.astro';
 ## Preview
 
 <ComponentPreview label="Basic table">
-  <cs-table id="demo-table"></cs-table>
+  <cs-table id="demo-table">
+    <cs-header slot="header" variant="h2" counter="(5)">Instances</cs-header>
+  </cs-table>
+</ComponentPreview>
+
+<ComponentPreview label="Empty state">
+  <cs-table id="demo-table-empty">
+    <cs-header slot="header" variant="h2">Instances</cs-header>
+    <cs-box slot="empty" text-align="center" color="inherit">
+      <cs-space-between size="xxs" direction="vertical">
+        <b>No instances</b>
+        <cs-box color="text-body-secondary">No instances to display.</cs-box>
+      </cs-space-between>
+    </cs-box>
+  </cs-table>
+</ComponentPreview>
+
+<ComponentPreview label="Loading state">
+  <cs-table id="demo-table-loading" loading loading-text="Loading instances">
+    <cs-header slot="header" variant="h2">Instances</cs-header>
+  </cs-table>
 </ComponentPreview>
 
 <script>{`
-  const el = document.getElementById('demo-table');
-  if (el) {
-    el.columnDefinitions = [
-      { id: 'name', header: 'Name', cell: item => item.name, sortingField: 'name' },
-      { id: 'type', header: 'Type', cell: item => item.type },
-      { id: 'size', header: 'Size', cell: item => item.size },
-    ];
-    el.items = [
-      { name: 'Instance A', type: 't3.micro', size: 'Small' },
-      { name: 'Instance B', type: 't3.small', size: 'Medium' },
-      { name: 'Instance C', type: 't3.large', size: 'Large' },
-    ];
+  const columns = [
+    { id: 'name', header: 'Instance name', cell: item => item.name, sortingField: 'name', isRowHeader: true },
+    { id: 'type', header: 'Instance type', cell: item => item.type, sortingField: 'type' },
+    { id: 'state', header: 'State', cell: item => item.state },
+    { id: 'launchDate', header: 'Launch date', cell: item => item.launchDate, sortingField: 'launchDate' },
+  ];
+
+  const items = [
+    { name: 'web-server-01', type: 't3.micro', state: 'Running', launchDate: '2025-01-15' },
+    { name: 'api-gateway', type: 't3.small', state: 'Running', launchDate: '2025-02-20' },
+    { name: 'batch-processor', type: 'c5.xlarge', state: 'Stopped', launchDate: '2024-11-03' },
+    { name: 'db-replica', type: 'r5.large', state: 'Running', launchDate: '2024-08-12' },
+    { name: 'dev-sandbox', type: 't3.nano', state: 'Stopped', launchDate: '2025-03-01' },
+  ];
+
+  const basic = document.getElementById('demo-table');
+  if (basic) {
+    basic.columnDefinitions = columns;
+    basic.items = items;
+  }
+
+  const empty = document.getElementById('demo-table-empty');
+  if (empty) {
+    empty.columnDefinitions = columns;
+    empty.items = [];
+  }
+
+  const loading = document.getElementById('demo-table-loading');
+  if (loading) {
+    loading.columnDefinitions = columns;
+    loading.items = [];
   }
 `}</script>
-
-> **Note:** Table data and column definitions are set via JavaScript properties. See usage below.
 
 ## Usage
 
 ```html
-<cs-table></cs-table>
+<cs-table id="my-table">
+  <cs-header slot="header" variant="h2" counter="(5)">Instances</cs-header>
+</cs-table>
 
 <script>
-  const table = document.querySelector('cs-table');
+  const table = document.getElementById('my-table');
   table.columnDefinitions = [
-    { id: 'name', header: 'Name', cell: item => item.name, sortingField: 'name' },
-    { id: 'type', header: 'Type', cell: item => item.type },
-    { id: 'size', header: 'Size', cell: item => item.size },
+    { id: 'name', header: 'Instance name', cell: item => item.name, sortingField: 'name', isRowHeader: true },
+    { id: 'type', header: 'Instance type', cell: item => item.type, sortingField: 'type' },
+    { id: 'state', header: 'State', cell: item => item.state },
+    { id: 'launchDate', header: 'Launch date', cell: item => item.launchDate, sortingField: 'launchDate' },
   ];
   table.items = [
-    { name: 'Item 1', type: 'Type A', size: 'Small' },
-    { name: 'Item 2', type: 'Type B', size: 'Large' },
-    { name: 'Item 3', type: 'Type A', size: 'Medium' },
+    { name: 'web-server-01', type: 't3.micro', state: 'Running', launchDate: '2025-01-15' },
+    { name: 'api-gateway', type: 't3.small', state: 'Running', launchDate: '2025-02-20' },
+    { name: 'batch-processor', type: 'c5.xlarge', state: 'Stopped', launchDate: '2024-11-03' },
+    { name: 'db-replica', type: 'r5.large', state: 'Running', launchDate: '2024-08-12' },
+    { name: 'dev-sandbox', type: 't3.nano', state: 'Stopped', launchDate: '2025-03-01' },
   ];
 </script>
 ```
