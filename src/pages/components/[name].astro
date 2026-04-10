@@ -22,7 +22,7 @@ const breadcrumbs = [
 ];
 ---
 <BaseLayout title={title} breadcrumbs={breadcrumbs} activeComponentId={comp.id}>
-  <cs-content-layout default-padding>
+  <cs-content-layout default-padding max-content-width="1440">
     <cs-header slot="header" variant="h1" description={`${comp.data.description} — <cs-${comp.data.component}>`}>
       {title}
     </cs-header>

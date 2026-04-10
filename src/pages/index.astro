@@ -6,7 +6,7 @@ const components = await getCollection('components');
 const breadcrumbs = [{ text: 'Home', href: '/' }];
 ---
 <BaseLayout title="Home" breadcrumbs={breadcrumbs} disableContentPaddings>
-  <cs-content-layout default-padding header-variant="high-contrast" header-background-style="linear-gradient(135deg, #0f1b2d 0%, #232f3e 50%, #1a3a5c 100%)">
+  <cs-content-layout default-padding max-content-width="1440" header-variant="high-contrast" header-background-style="linear-gradient(135deg, #0f1b2d 0%, #232f3e 50%, #1a3a5c 100%)">
     <div slot="header" class="hero">
       <cs-space-between size="xs" direction="vertical">
         <h1 class="hero-title">Cumulus UI</h1>
