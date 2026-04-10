@@ -2,14 +2,16 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 const file = 'node_modules/astro/dist/runtime/server/jsx.js';
 const content = readFileSync(file, 'utf8');
-const patched = content.replace(
-  'vnode.type !== ClientOnlyPlaceholder:',
-  "vnode.type !== ClientOnlyPlaceholder && !vnode.type.includes('-'):"
-);
 
-if (content === patched) {
-  console.log('⚠️  Astro patch target not found — may already be fixed or changed');
+const original = 'vnode.type !== ClientOnlyPlaceholder):';
+const replacement = "vnode.type !== ClientOnlyPlaceholder && !vnode.type.includes('-')):";
+
+if (content.includes(replacement)) {
+  console.log('astro/jsx: patch already applied');
+} else if (content.includes(original)) {
+  writeFileSync(file, content.replace(original, replacement));
+  console.log('astro/jsx: patch applied');
 } else {
-  writeFileSync(file, patched);
-  console.log('✅ Patched astro JSX handler for custom element hydration');
+  console.error('astro/jsx: patch failed — target string not found');
+  process.exit(1);
 }
