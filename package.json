@@ -10,7 +10,7 @@
     "build": "astro build",
     "generate:props": "tsx scripts/extract-props.ts",
     "preview": "astro preview",
-    "postinstall": "sed -i '' \"s/vnode.type !== ClientOnlyPlaceholder:/vnode.type !== ClientOnlyPlaceholder \\&\\& !vnode.type.includes('-'):/\" node_modules/astro/dist/runtime/server/jsx.js"
+    "postinstall": "node scripts/patch-astro.mjs"
   },
   "dependencies": {
     "@astrojs/mdx": "^5.0.3",
