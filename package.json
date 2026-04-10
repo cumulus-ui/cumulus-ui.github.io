@@ -12,17 +12,18 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "@astrojs/mdx": "^4.3.14",
+    "@astrojs/mdx": "^5.0.3",
     "@cumulus-ui/components": "0.6.1",
     "@cumulus-ui/design-tokens": "^0.4.4",
     "@fontsource/open-sans": "^5.2.7",
     "@semantic-ui/astro-lit": "cumulus-ui/astro-lit#fix/hydration-without-client-directives",
     "@webcomponents/template-shadowroot": "^0.2.1",
-    "astro": "^5.18.1",
+    "astro": "^6.1.5",
     "lit": "^3.3.2",
     "marked": "^18.0.0"
   },
   "devDependencies": {
+    "@playwright/test": "^1.59.1",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3"
   }
