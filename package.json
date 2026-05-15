@@ -13,19 +13,19 @@
     "postinstall": "node scripts/patch-astro.mjs"
   },
   "dependencies": {
-    "@astrojs/mdx": "^5.0.5",
+    "@astrojs/mdx": "^5.0.6",
     "@cumulus-ui/components": "0.6.4",
     "@cumulus-ui/design-tokens": "^0.4.4",
     "@fontsource/open-sans": "^5.2.7",
     "@semantic-ui/astro-lit": "cumulus-ui/astro-lit#fix/hydration-without-client-directives",
     "@webcomponents/template-shadowroot": "^0.2.1",
-    "astro": "^6.3.2",
+    "astro": "^6.3.3",
     "lit": "^3.3.3",
     "marked": "^18.0.3"
   },
   "devDependencies": {
     "@playwright/test": "^1.60.0",
-    "tsx": "^4.21.0",
+    "tsx": "^4.22.0",
     "typescript": "^5.9.3"
   }
 }
